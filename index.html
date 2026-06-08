@@ -1,0 +1,1603 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claude Chat & Cowork 雙效核心實戰：2小時從個人效率到企業安全落地</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Sidebar Navigation -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <img src="logo.jpg" alt="Logo" onerror="this.style.display='none'">
+      <h1>Claude 實戰課程</h1>
+    </div>
+    <div class="sidebar-menu">
+      <div class="menu-section-title">課程起點</div>
+      <a href="#" class="menu-item active" id="menu-slide-0" data-slide-index="0">
+        <span class="material-icons">co_present</span> 課程首頁 & 講者介紹
+      </a>
+      <a href="#" class="menu-item" id="menu-slide-1" data-slide-index="1">
+        <span class="material-icons">analytics</span> 學員背景 & 痛點剖析
+      </a>
+      <a href="#" class="menu-item" id="menu-slide-2" data-slide-index="2">
+        <span class="material-icons">schedule</span> 2小時課程議程
+      </a>
+
+      <div class="menu-section-title">設定與基礎 (PDF P5-13)</div>
+      <a href="#" class="menu-item" id="menu-slide-3" data-slide-index="3">
+        <span class="material-icons">settings</span> Settings 設定概覽
+      </a>
+      <a href="#" class="menu-item" id="menu-slide-4" data-slide-index="4">
+        <span class="material-icons">check_circle</span> Cowork 初始設定 5 步
+      </a>
+      <a href="#" class="menu-item" id="menu-slide-5" data-slide-index="5">
+        <span class="material-icons">menu_book</span> Cowork 基礎 7 步驟
+      </a>
+      <a href="#" class="menu-item" id="menu-slide-6" data-slide-index="6">
+        <span class="material-icons">download</span> Step 1: 下載安裝 Desktop
+      </a>
+      <a href="#" class="menu-item" id="menu-slide-7" data-slide-index="7">
+        <span class="material-icons">extension</span> Step 2: 安裝 Chrome 外掛
+      </a>
+      <a href="#" class="menu-item" id="menu-slide-8" data-slide-index="8">
+        <span class="material-icons">article</span> Step 3: 設定 CLAUDE.md
+      </a>
+      <a href="#" class="menu-item" id="menu-slide-9" data-slide-index="9">
+        <span class="material-icons">folder_open</span> Step 4: 選擇工作資料夾
+      </a>
+      <a href="#" class="menu-item" id="menu-slide-10" data-slide-index="10">
+        <span class="material-icons">create_new_folder</span> 專屬工作資料夾範例
+      </a>
+
+      <div class="menu-section-title">指令與案例 (PDF P14-28)</div>
+      <a href="#" class="menu-item" id="menu-slide-11" data-slide-index="11">
+        <span class="material-icons">g_translate</span> Global Instructions
+      </a>
+      <a href="#" class="menu-item" id="menu-slide-12" data-slide-index="12">
+        <span class="material-icons">layers</span> Instruction 層級優先度
+      </a>
+      <a href="#" class="menu-item" id="menu-slide-13" data-slide-index="13">
+        <span class="material-icons">psychology</span> 萬用 Prompt 模板
+      </a>
+      <a href="#" class="menu-item" id="menu-slide-14" data-slide-index="14">
+        <span class="material-icons">list_alt</span> Cowork 5大案例總覽
+      </a>
+      <a href="#" class="menu-item" id="menu-slide-15" data-slide-index="15">
+        <span class="material-icons">assignment_turned_in</span> Case 1: 草稿直接存 Word
+      </a>
+      <a href="#" class="menu-item" id="menu-slide-16" data-slide-index="16">
+        <span class="material-icons">table_view</span> Case 2: 批量 PDF 轉 Excel
+      </a>
+      <a href="#" class="menu-item" id="menu-slide-17" data-slide-index="17">
+        <span class="material-icons">slideshow</span> Case 3: 搜尋競品出簡報
+      </a>
+      <a href="#" class="menu-item" id="menu-slide-18" data-slide-index="18">
+        <span class="material-icons">drive_file_rename_outline</span> Case 4: 掃描改名與分類
+      </a>
+
+      <div class="menu-section-title">實戰互動區</div>
+      <a href="#" class="menu-item" id="menu-slide-19" data-slide-index="19">
+        <span class="material-icons">playlist_add_check</span> 互動式：AI 安全防護指標
+      </a>
+      <a href="#" class="menu-item" id="menu-slide-20" data-slide-index="20">
+        <span class="material-icons">construction</span> 互動式：萬用 Prompt 組合器
+      </a>
+      <a href="#" class="menu-item" id="menu-slide-21" data-slide-index="21">
+        <span class="material-icons">copy_all</span> 互動式：CLAUDE.md 產生器
+      </a>
+      <a href="#" class="menu-item" id="menu-slide-22" data-slide-index="22">
+        <span class="material-icons">business_center</span> 互動式：多維角色案例拆解
+      </a>
+      <a href="#" class="menu-item" id="menu-slide-23" data-slide-index="23">
+        <span class="material-icons">settings_suggest</span> 進階功能：排程、遙控與遠端
+      </a>
+      <a href="#" class="menu-item" id="menu-slide-24" data-slide-index="24">
+        <span class="material-icons">pan_tool</span> 互動式：現場學員點餐實作
+      </a>
+      <a href="#" class="menu-item" id="menu-slide-25" data-slide-index="25">
+        <span class="material-icons">task_alt</span> 課後行動：你的第一個自動化
+      </a>
+
+      <div class="menu-section-title">課程結束</div>
+      <a href="#" class="menu-item" id="menu-slide-26" data-slide-index="26">
+        <span class="material-icons">celebration</span> Thank you!
+      </a>
+    </div>
+    <div class="sidebar-footer">
+      © 2026 Claude Cowork Workshop
+    </div>
+  </aside>
+
+  <!-- Main Presentation Container -->
+  <main class="presentation-container">
+    <!-- Top Progress Bar -->
+    <div class="progress-bar-container">
+      <div class="progress-bar" id="progress-bar"></div>
+    </div>
+
+    <!-- Header Tools -->
+    <header class="top-header">
+      <div class="top-header-left">
+        <button class="btn-icon" id="toggle-sidebar" title="收合導覽列">
+          <span class="material-icons">menu</span>
+        </button>
+        <img src="logo.jpg" alt="Logo" class="header-logo" onerror="this.style.display='none'">
+      </div>
+      <div class="top-header-right" style="display: flex; align-items: center; gap: 16px;">
+        <span class="slide-counter" id="current-slide-counter" style="font-family: var(--font-title); font-weight: 700; font-size: 1.15rem; color: var(--color-text-sub);">1 / 27</span>
+        <button class="btn-icon" id="toggle-fullscreen" title="全螢幕播放 (F11)">
+          <span class="material-icons">fullscreen</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Slide Deck Viewport -->
+    <div class="slides-viewport">
+
+      <!-- Slide 0: Cover -->
+      <section class="slide active slide-cover">
+        <div class="slide-content-card">
+          <img src="logo.jpg" alt="Company Logo" class="cover-logo" onerror="this.style.display='none'">
+          <span class="slide-tag">2小時 精華實戰工作坊</span>
+          <h1 class="main-title">Claude Chat & Cowork 雙效核心實戰</h1>
+          <p class="sub-title">從個人文件處理、多檔案分析，到企業安全落地與自動化工作流建置</p>
+          <div class="meta-info">
+            <div class="meta-item">課程日期：<strong>2026.07.02</strong></div>
+            <div class="meta-item">講師姓名：<strong>王玉玲</strong></div>
+            <div class="meta-item">課程時長：<strong>120 分鐘</strong></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 1: Survey Statistics (Updated with real data from 19 respondents) -->
+      <section class="slide">
+        <div class="slide-content-card">
+          <img src="logo.jpg" alt="Logo" class="slide-logo" onerror="this.style.display='none'">
+          <div class="slide-title-group">
+            <span class="slide-tag">學前調查洞察｜19份有效問卷</span>
+            <h2 class="slide-title">我們聽見了：<span class="highlight">這就是你們真實的數據</span></h2>
+          </div>
+          <div class="slide-body grid-2">
+            <!-- 左欄：痛點 + 學習目標 -->
+            <div style="display:flex;flex-direction:column;gap:18px;">
+              <div class="chart-container">
+                <h4 class="chart-title"><i class="material-icons">bar_chart</i> 工作最花時間的事（複選，19人）</h4>
+                <div class="bar-chart">
+                  <div class="bar-group">
+                    <div class="bar-label-info">
+                      <span class="bar-name">資料整理 / 分析</span>
+                      <span class="bar-value">79% (15人)</span>
+                    </div>
+                    <div class="bar-track"><div class="bar-fill bar-fill-1" style="width:79%"></div></div>
+                  </div>
+                  <div class="bar-group">
+                    <div class="bar-label-info">
+                      <span class="bar-name">撰寫報告 / 文件</span>
+                      <span class="bar-value">58% (11人)</span>
+                    </div>
+                    <div class="bar-track"><div class="bar-fill bar-fill-2" style="width:58%"></div></div>
+                  </div>
+                  <div class="bar-group">
+                    <div class="bar-label-info">
+                      <span class="bar-name">製作簡報 / 提案</span>
+                      <span class="bar-value">47% (9人)</span>
+                    </div>
+                    <div class="bar-track"><div class="bar-fill bar-fill-3" style="width:47%"></div></div>
+                  </div>
+                  <div class="bar-group">
+                    <div class="bar-label-info">
+                      <span class="bar-name">市場調查 / 競品分析</span>
+                      <span class="bar-value">37% (7人)</span>
+                    </div>
+                    <div class="bar-track"><div class="bar-fill bar-fill-4" style="width:37%"></div></div>
+                  </div>
+                  <div class="bar-group">
+                    <div class="bar-label-info">
+                      <span class="bar-name">會議記錄 / 摘要</span>
+                      <span class="bar-value">32% (6人)</span>
+                    </div>
+                    <div class="bar-track"><div class="bar-fill bar-fill-5" style="width:32%"></div></div>
+                  </div>
+                </div>
+              </div>
+              <div class="chart-container">
+                <h4 class="chart-title"><i class="material-icons">emoji_objects</i> 你們想從這堂課帶走什麼？</h4>
+                <div class="bar-chart">
+                  <div class="bar-group">
+                    <div class="bar-label-info">
+                      <span class="bar-name">AI 提升個人工作效率</span>
+                      <span class="bar-value">89% (17人)</span>
+                    </div>
+                    <div class="bar-track"><div class="bar-fill bar-fill-1" style="width:89%"></div></div>
+                  </div>
+                  <div class="bar-group">
+                    <div class="bar-label-info">
+                      <span class="bar-name">掌握 AI 趨勢，強化決策</span>
+                      <span class="bar-value">68% (13人)</span>
+                    </div>
+                    <div class="bar-track"><div class="bar-fill bar-fill-2" style="width:68%"></div></div>
+                  </div>
+                  <div class="bar-group">
+                    <div class="bar-label-info">
+                      <span class="bar-name">學好 Prompt 技巧</span>
+                      <span class="bar-value">58% (11人)</span>
+                    </div>
+                    <div class="bar-track"><div class="bar-fill bar-fill-3" style="width:58%"></div></div>
+                  </div>
+                  <div class="bar-group">
+                    <div class="bar-label-info">
+                      <span class="bar-name">評估企業 AI 導入可行性</span>
+                      <span class="bar-value">53% (10人)</span>
+                    </div>
+                    <div class="bar-track"><div class="bar-fill bar-fill-4" style="width:53%"></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 右欄：疑慮 + 組成 + 工具現況 -->
+            <div style="display:flex;flex-direction:column;gap:15px;justify-content:center;">
+              <div class="chart-container-right">
+                <h4 class="chart-title"><i class="material-icons">shield</i> 來上課前，你們最擔心的是⋯</h4>
+                <div class="concern-stats">
+                  <div class="donut-card">
+                    <div class="donut-number" style="color:#e05a3a;">63%</div>
+                    <div class="donut-label">資料外洩 / 資安問題<br><small style="font-size:0.85em;opacity:0.75;">（12人，今天我們會正面解答）</small></div>
+                  </div>
+                  <div class="donut-card">
+                    <div class="donut-number">53%</div>
+                    <div class="donut-label">擔心 AI 回答不準確<br><small style="font-size:0.85em;opacity:0.75;">（10人，幻覺成因與對策）</small></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="feature-card" style="padding:18px;">
+                <h3 style="font-size:1.35rem;margin-bottom:10px;"><i class="material-icons">groups</i> 在座 19 位的樣子</h3>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+                  <div style="background:rgba(74,144,217,0.08);border-radius:8px;padding:10px;text-align:center;">
+                    <div style="font-size:1.8rem;font-weight:700;color:var(--color-primary,#4A90D9);">47%</div>
+                    <div style="font-size:0.95rem;color:var(--color-text-sub);">主管階層<br><small>（高階5人 + 中階4人）</small></div>
+                  </div>
+                  <div style="background:rgba(74,144,217,0.08);border-radius:8px;padding:10px;text-align:center;">
+                    <div style="font-size:1.8rem;font-weight:700;color:var(--color-primary,#4A90D9);">68%</div>
+                    <div style="font-size:0.95rem;color:var(--color-text-sub);">每週固定使用 AI<br><small>（13人 / 僅1人未用過）</small></div>
+                  </div>
+                  <div style="background:rgba(74,144,217,0.08);border-radius:8px;padding:10px;text-align:center;">
+                    <div style="font-size:1.8rem;font-weight:700;color:var(--color-primary,#4A90D9);">2.8</div>
+                    <div style="font-size:0.95rem;color:var(--color-text-sub);">AI能力自評均值<br><small>（滿分5分）</small></div>
+                  </div>
+                  <div style="background:rgba(74,144,217,0.08);border-radius:8px;padding:10px;text-align:center;">
+                    <div style="font-size:1.8rem;font-weight:700;color:var(--color-primary,#4A90D9);">3大</div>
+                    <div style="font-size:0.95rem;color:var(--color-text-sub);">主要業務別<br><small>（油品／財務／人資）</small></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="feature-card" style="padding:18px;">
+                <h3 style="font-size:1.35rem;margin-bottom:10px;"><i class="material-icons">devices</i> 你們用過哪些 AI 工具？</h3>
+                <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px;">
+                  <span style="padding:5px 14px;border-radius:20px;background:rgba(74,144,217,0.15);font-size:1rem;font-weight:600;">Gemini / Copilot 79%</span>
+                  <span style="padding:5px 14px;border-radius:20px;background:rgba(74,144,217,0.15);font-size:1rem;font-weight:600;">ChatGPT 74%</span>
+                  <span style="padding:5px 14px;border-radius:20px;background:rgba(74,144,217,0.10);font-size:1rem;">NotebookLM 47%</span>
+                  <span style="padding:5px 14px;border-radius:20px;background:rgba(74,144,217,0.10);font-size:1rem;">Claude 26%</span>
+                </div>
+                <p style="font-size:1.05rem;color:var(--color-text-sub);line-height:1.5;">
+                  你們不是新手——今天直接從「用好」開始。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+<!-- Slide 2: Agenda -->
+      <section class="slide">
+        <div class="slide-content-card">
+          <img src="logo.jpg" alt="Logo" class="slide-logo" onerror="this.style.display='none'">
+          <div class="slide-title-group">
+            <span class="slide-tag">COURSE SCHEDULE</span>
+            <h2 class="slide-title">2小時實戰課表</h2>
+          </div>
+          <div class="slide-body">
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-time">10 Min</div>
+                <div class="timeline-marker">
+                  <div class="timeline-dot"></div>
+                  <div class="timeline-line"></div>
+                </div>
+                <div class="timeline-content">
+                  <h4>01. Claude 生態系與設定概覽</h4>
+                  <p>釐清網頁端與桌面代理 (Cowork) 的適用場景，解鎖帳戶設定、隱私保護與連接器授權。</p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-time">25 Min</div>
+                <div class="timeline-marker">
+                  <div class="timeline-dot"></div>
+                  <div class="timeline-line"></div>
+                </div>
+                <div class="timeline-content">
+                  <h4>02. 初始安全設定 & 全域指令 (Global Instructions)</h4>
+                  <p>實作設定「資安防火牆偏好」，建立本地專屬工作目錄與 `CLAUDE.md` 自動讀取機制。</p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-time">30 Min</div>
+                <div class="timeline-marker">
+                  <div class="timeline-dot"></div>
+                  <div class="timeline-line"></div>
+                </div>
+                <div class="timeline-content">
+                  <h4>03. 核心工具 CLAUDE.md 與 5 大實戰案例</h4>
+                  <p>學習如何在本地資料夾放入 SOP 說明書，解鎖「草稿直接存 Word、批量 PDF 轉 Excel、自動競品簡報、資料夾改名命名」。</p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-time">40 Min</div>
+                <div class="timeline-marker">
+                  <div class="timeline-dot"></div>
+                  <div class="timeline-line"></div>
+                </div>
+                <div class="timeline-content">
+                  <h4>04. 現場學員點餐實作 (分組實作)</h4>
+                  <p>解鎖學員選定案例（人資招募、業務績效管理、行銷成效分析、投資標的追蹤），親手建立無程式碼工作流與 Prompt 指令。</p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-time">15 Min</div>
+                <div class="timeline-marker">
+                  <div class="timeline-dot"></div>
+                </div>
+                <div class="timeline-content">
+                  <h4>05. Q&A 與企業落地行動指南</h4>
+                  <p>如何將 AI 進一步整合進公司運作、共享團隊 Skills，並規劃未來公司 KM (知識管理) 地端/雲端混和模型藍圖。</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 3: Settings Overview (PDF Page 5) -->
+      <section class="slide">
+        <div class="slide-content-card">
+          <img src="logo.jpg" alt="Logo" class="slide-logo" onerror="this.style.display='none'">
+          <div class="slide-title-group">
+            <span class="slide-tag">SETTINGS OVERVIEW</span>
+            <h2 class="slide-title">Settings 一次搞懂：<span class="highlight">你需要設定哪些？</span></h2>
+          </div>
+          <div class="slide-body grid-2">
+            <div class="quiz-reveal-content">
+              <div class="feature-card" style="margin-bottom: 16px; padding: 20px;">
+                <h3 style="font-size: 1.85rem;">💳 帳號與費用 (Account)</h3>
+                <p style="font-size: 1.6rem; color: var(--color-text-sub);">
+                  管理個人與訂閱方案 (Billing 必設) 並且開啟 Memory 記憶對話 + Search chats，讓 Claude 記住你。
+                </p>
+              </div>
+              <div class="feature-card" style="margin-bottom: 16px; padding: 20px;">
+                <h3 style="font-size: 1.85rem;">🔌 功能與連接 (Capabilities)</h3>
+                <p style="font-size: 1.6rem; color: var(--color-text-sub);">
+                  開啟網路搜尋、執行程式、本機讀寫檔案，並授權串接常用外部工具 (Gmail, Drive, Slack, Notion)。
+                </p>
+              </div>
+              <div class="feature-card" style="padding: 20px;">
+                <h3 style="font-size: 1.85rem;">⚙️ Cowork 設定 (最重要)</h3>
+                <p style="font-size: 1.6rem; color: var(--color-text-sub);">
+                  包含 Global Instructions (全域自動加載規則說明書)，以及桌面應用與 Chrome 瀏覽器協同外掛設定。
+                </p>
+              </div>
+            </div>
+            <div style="display:flex; flex-direction:column; justify-content:center;">
+              <div class="quiz-container">
+                <div class="quiz-question">【觀念挑戰】如果主管擔心機密商業資料被 AI 拿去當作訓練模型，我們該怎麼做？</div>
+                <div class="quiz-options">
+                  <div class="quiz-option" data-correct="true">A. 填表申請 Opt-out 關閉模型訓練，或直接採用付費 Team/Enterprise 企業方案</div>
+                  <div class="quiz-option" data-correct="false">B. 關閉網路搜尋功能</div>
+                  <div class="quiz-option" data-correct="false">C. 每次對話完畢都手動刪除對話紀錄</div>
+                </div>
+                <div class="quiz-explanation" 
+                     data-text-correct="答對了！企業付費方案 (Team/Enterprise) 明文保障數據不被作為模型訓練素材；個人版則需主動填表申請 Opt-out 關閉訓練，才能確保資安合規。" 
+                     data-text-incorrect="不對喔。刪除對話紀錄或關閉網路搜尋，並不會影響服務商後台對資料的收錄與訓練。必須使用 Opt-out 或企業方案。">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 4: Cowork Initial Setup 5 Steps (PDF Page 6) -->
+      <section class="slide">
+        <div class="slide-content-card">
+          <img src="logo.jpg" alt="Logo" class="slide-logo" onerror="this.style.display='none'">
+          <div class="slide-title-group">
+            <span class="slide-tag">SETUP WORKFLOW</span>
+            <h2 class="slide-title">Cowork 初始環境設定：<span class="highlight">快速 5 步完成</span></h2>
+          </div>
+          <div class="slide-body grid-2">
+            <div class="quiz-reveal-content">
+              <div class="timeline" style="margin-top:20px;">
+                <div class="timeline-item">
+                  <div class="timeline-time">Step 1</div>
+                  <div class="timeline-marker"><div class="timeline-dot"></div><div class="timeline-line"></div></div>
+                  <div class="timeline-content"><h4>下載桌面應用</h4><p>前往 <a href="https://claude.ai/download" target="_blank" style="color:var(--color-accent);">claude.ai/download</a> 下載安裝檔。</p></div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-time">Step 2</div>
+                  <div class="timeline-marker"><div class="timeline-dot"></div><div class="timeline-line"></div></div>
+                  <div class="timeline-content"><h4>升級付費方案</h4><p>升級 Pro（$20/月）或 Team，解鎖本機檔案讀寫與外部連接器權限。</p></div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-time">Step 3</div>
+                  <div class="timeline-marker"><div class="timeline-dot"></div><div class="timeline-line"></div></div>
+                  <div class="timeline-content"><h4>開啟 Cowork 分頁</h4><p>開啟桌面 App，在對話頂端切換至全新的 Cowork 協作介面。</p></div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-time">Step 4</div>
+                  <div class="timeline-marker"><div class="timeline-dot"></div><div class="timeline-line"></div></div>
+                  <div class="timeline-content"><h4>選擇工作資料夾</h4><p>點選本機目錄（建議為不同專案建立獨立的專用資料夾）。</p></div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-time">Step 5</div>
+                  <div class="timeline-marker"><div class="timeline-dot"></div></div>
+                  <div class="timeline-content"><h4>選擇大模型</h4><p>選定模型為：<strong>Opus 4.6 + Extended Thinking</strong> 解鎖最強推理模式。</p></div>
+                </div>
+              </div>
+            </div>
+            <div style="display:flex; flex-direction:column; justify-content:center;">
+              <div class="quiz-container">
+                <div class="quiz-question">【運作觀念】在初始設定中，為什麼執行 Cowork 任務建議使用 Opus 4.6 + Extended Thinking？</div>
+                <div class="quiz-options">
+                  <div class="quiz-option" data-correct="false">A. 因為這個模型回答速度最快、字數最少</div>
+                  <div class="quiz-option" data-correct="false">B. 為了節省您的 API 額度</div>
+                  <div class="quiz-option" data-correct="true">C. Extended Thinking (延伸思考) 能讓 AI 在寫入或修改本地檔案前進行深度邏輯規劃，防範產生格式錯誤的檔案</div>
+                </div>
+                <div class="quiz-explanation" 
+                     data-text-correct="答對了！Extended Thinking 能在 AI 實際動手寫檔前進行縝密 analysis，確保多檔案處理的邏輯正確，避免產生損壞的報表檔案。" 
+                     data-text-incorrect="不對喔。Extended Thinking 會花更多時間思考，速度不是最快，但能極大提升跨檔案分析與檔案寫入的準確度。">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 5: Cowork 7 Steps Configuration (PDF Page 7-8) -->
+      <section class="slide">
+        <div class="slide-content-card">
+          <img src="logo.jpg" alt="Logo" class="slide-logo" onerror="this.style.display='none'">
+          <div class="slide-title-group">
+            <span class="slide-tag">COWORK CONFIGURATION</span>
+            <h2 class="slide-title">Cowork 基礎設定：<span class="highlight">7 個步驟正式上手</span></h2>
+          </div>
+          <div class="slide-body grid-2">
+            <div>
+              <p>從零到完整配置，只需完成這 7 個核心要素，即可讓 AI 真正進入您的日常辦公環境：</p>
+              <div class="grid-2" style="margin-top:20px; gap:16px;">
+                <div class="feature-card" style="padding:16px;">
+                  <h4 style="color:var(--color-primary); font-size:1.85rem;">01. Desktop App</h4>
+                  <p style="font-size:1.6rem;">下載 App 並以個人或企業帳號登入。</p>
+                </div>
+                <div class="feature-card" style="padding:16px;">
+                  <h4 style="color:var(--color-primary); font-size:1.85rem;">02. Chrome Ext</h4>
+                  <p style="font-size:1.6rem;">安裝瀏覽器擴充功能以讀取網頁內容。</p>
+                </div>
+                <div class="feature-card" style="padding:16px;">
+                  <h4 style="color:var(--color-primary); font-size:1.85rem;">03. Settings</h4>
+                  <p style="font-size:1.6rem;">配置全域偏好與 `CLAUDE.md` SOP 說明。</p>
+                </div>
+                <div class="feature-card" style="padding:16px;">
+                  <h4 style="color:var(--color-primary); font-size:1.85rem;">04. 本機資料夾</h4>
+                  <p style="font-size:1.6rem;">選定專屬目錄，供 Claude 進行檔案讀寫。</p>
+                </div>
+              </div>
+            </div>
+            <div style="display:flex; flex-direction:column; justify-content:center; gap:12px;">
+              <div class="feature-card" style="padding:16px;">
+                <h4 style="color:var(--color-primary); font-size:1.85rem;">05. Connector 連接器</h4>
+                <p style="font-size:1.6rem;">連結 Gmail / Slack / Google Drive 進行外部工具串接與跨平台寫入。</p>
+              </div>
+              <div class="feature-card" style="padding:16px;">
+                <h4 style="color:var(--color-primary); font-size:1.85rem;">06. Skill 專業工作流</h4>
+                <p style="font-size:1.6rem;">使用「/」觸發預存的 SOP 工作流程，自動在本地執行特定代辦事項。</p>
+              </div>
+              <div class="feature-card" style="padding:16px;">
+                <h4 style="color:var(--color-primary); font-size:1.85rem;">07. Plugin 插件組合包</h4>
+                <p style="font-size:1.6rem;">一鍵安裝 MCP + Skills 組合包，直接在 Marketplace 下載社群維護的專業工具。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 6: Step 1 - Download & Install (PDF Page 9) -->
+      <section class="slide">
+        <div class="slide-content-card">
+          <img src="logo.jpg" alt="Logo" class="slide-logo" onerror="this.style.display='none'">
+          <div class="slide-title-group">
+            <span class="slide-tag">STEP 01 - INSTALLATION</span>
+            <h2 class="slide-title">下載與安裝：<span class="highlight">Claude Desktop App</span></h2>
+          </div>
+          <div class="slide-body grid-2">
+            <div class="quiz-reveal-content">
+              <p style="font-size: 1.6rem; line-height: 1.6;">您需要先擁有一個 Anthropic 帳號，免費版即可開始下載體驗，但付費版能解鎖更高頻率的檔案讀寫限制：</p>
+              <div class="highlight-box" style="margin-top:20px;">
+                <h4 style="font-size: 1.85rem; color: var(--color-primary); margin-bottom: 10px;">📥 下載安裝流程：</h4>
+                <ol style="margin-left: 20px; font-size: 1.6rem; line-height:1.6;">
+                  <li style="margin-bottom:8px;">前往官網 <a href="https://claude.ai/download" target="_blank" style="color:var(--color-accent); font-weight:700;">claude.ai/download</a>。</li>
+                  <li style="margin-bottom:8px;">依據您的電腦系統選擇對應作業系統下載。</li>
+                  <li style="margin-bottom:8px;">雙擊安裝檔，安裝完成後啟動 App 並登入。</li>
+                </ol>
+              </div>
+            </div>
+            <div style="display:flex; flex-direction:column; justify-content:center;">
+              <div class="quiz-container">
+                <div class="quiz-question">【核心觀念】為什麼一定要下載 Desktop App 才能使用 Cowork 協作，網頁版不行嗎？</div>
+                <div class="quiz-options">
+                  <div class="quiz-option" data-correct="true">A. 是的，網頁版受限於瀏覽器沙盒安全機制，無法直接讀取和修改您本機電腦的檔案</div>
+                  <div class="quiz-option" data-correct="false">B. 可以，網頁版跟桌面版功能完全一樣，只是桌面版運行速度快十倍</div>
+                  <div class="quiz-option" data-correct="false">C. 可以，只要對話時打上本機檔案路徑，網頁版就可以直接存取</div>
+                </div>
+                <div class="quiz-explanation" 
+                     data-text-correct="完全正確！瀏覽器的沙盒防護限制了網頁版直接存取您的硬碟。只有安裝桌面 App 並給予授權，AI 才能進行本地檔案讀寫。" 
+                     data-text-incorrect="不對喔。瀏覽器安全機制（沙盒）絕對禁止網頁直接存取您的本地檔案，只靠文字路徑或速度差異並非主因。">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 7: Step 2 - Chrome Extension (PDF Page 10) -->
+      <section class="slide">
+        <div class="slide-content-card">
+          <img src="logo.jpg" alt="Logo" class="slide-logo" onerror="this.style.display='none'">
+          <div class="slide-title-group">
+            <span class="slide-tag">STEP 02 - CHROME EXTENSION</span>
+            <h2 class="slide-title">瀏覽器擴充功能：<span class="highlight">讓 AI 讀取您的網頁</span></h2>
+          </div>
+          <div class="slide-body grid-2">
+            <div class="quiz-reveal-content">
+              <p style="font-size: 1.6rem; line-height: 1.6;">為了讓桌面端的 Claude 能夠讀取與操作您正在瀏覽的網頁內容（例如 ERP 畫面、SaaS 工具網頁），需要同步配置 Chrome 外掛：</p>
+              <div class="highlight-box accent" style="margin-top:20px;">
+                <h4 style="font-size: 1.85rem; color: var(--color-primary); margin-bottom: 10px;">🔧 安裝與授權步驟：</h4>
+                <ol style="margin-left:20px; font-size: 1.6rem; line-height:1.6;">
+                  <li style="margin-bottom:8px;">在 Chrome 線上商店搜尋並安裝「<strong>Claude</strong>」官方擴充外掛。</li>
+                  <li style="margin-bottom:8px;">點選外掛圖示並登入您的同一個帳照，這將自動與桌面端共用狀態。</li>
+                </ol>
+              </div>
+            </div>
+            <div style="display:flex; flex-direction:column; justify-content:center;">
+              <div class="quiz-container">
+                <div class="quiz-question">【外掛作用】Chrome Extension 在 Cowork 協同中扮演了什麼關鍵角色？</div>
+                <div class="quiz-options">
+                  <div class="quiz-option" data-correct="false">A. 用來封鎖不安全的網站廣告</div>
+                  <div class="quiz-option" data-correct="false">B. 它可以代替桌面端執行本機的 Python 程式</div>
+                  <div class="quiz-option" data-correct="true">C. 作為桌面端進行 Browser Use 的橋樑，將瀏覽器中正在查看的網頁內容傳給桌面端 AI 進行分析</div>
+                </div>
+                <div class="quiz-explanation" 
+                     data-text-correct="答對了！Chrome Extension 能將您當前瀏覽器分頁的 HTML 結構傳輸給桌面版 Claude，實現『幫我分析我現在看的這個網頁』的 Browser Use 協作！" 
+                     data-text-incorrect="不對喔。外掛主要用作桌面 App 與瀏覽器間的資訊橋樑，讓 AI 能『看見』您目前的網頁，並不是用來執行程式或擋廣告。">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 8: Step 3 - CLAUDE.md Settings (PDF Page 11) -->
+      <section class="slide">
+        <div class="slide-content-card">
+          <img src="logo.jpg" alt="Logo" class="slide-logo" onerror="this.style.display='none'">
+          <div class="slide-title-group">
+            <span class="slide-tag">STEP 03 - CONFIGURATION</span>
+            <h2 class="slide-title">設定 Settings 與工作指南：<span class="highlight">建立 CLAUDE.md</span></h2>
+          </div>
+          <div class="slide-body grid-2">
+            <div class="quiz-reveal-content">
+              <p><strong>`CLAUDE.md`</strong> 是您寫給 AI 助理的「工作說明書」。每當您切換到該資料夾，Claude 就會自動讀取此檔案，不需在對話中重複解釋：</p>
+              <div class="timeline" style="margin-top:16px;">
+                <div class="timeline-item">
+                  <div class="timeline-time">Step 1</div>
+                  <div class="timeline-marker"><div class="timeline-dot"></div><div class="timeline-line"></div></div>
+                  <div class="timeline-content"><h4>建立檔案</h4><p>在本地工作目錄下，建立命名為 `CLAUDE.md` 的純文字檔。</p></div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-time">Step 2</div>
+                  <div class="timeline-marker"><div class="timeline-dot"></div><div class="timeline-line"></div></div>
+                  <div class="timeline-content"><h4>寫入偏好</h4><p>寫明角色偏好、常用術語與檔案輸出限制。</p></div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-time">Step 3</div>
+                  <div class="timeline-marker"><div class="timeline-dot"></div></div>
+                  <div class="timeline-content"><h4>自動加載</h4><p>每次在此目錄開對話，AI 將自動載入，不佔對話框長度。</p></div>
+                </div>
+              </div>
+            </div>
+            <div style="display:flex; flex-direction:column; justify-content:center;">
+              <div class="quiz-container">
+                <div class="quiz-question">【自動化機制】在本地資料夾放入 `CLAUDE.md` 後，我們需要每次對話都手動複製貼上它嗎？</div>
+                <div class="quiz-options">
+                  <div class="quiz-option" data-correct="true">A. 不需要！每次在此目錄開啟對話時，桌面版會在背景自動讀取載入，不佔用聊天長度</div>
+                  <div class="quiz-option" data-correct="false">B. 需要，每次都要複製貼上以防 AI 忘記</div>
+                  <div class="quiz-option" data-correct="false">C. 需要，並且必須手動將它改名為 claudemd.txt</div>
+                </div>
+                <div class="quiz-explanation" 
+                     data-text-correct="答對了！這就是 \`CLAUDE.md\` 的強大之處。桌面版會自動偵測工作資料夾並在背景加載該檔案，讓您省去重複交代背景資訊的麻煩。" 
+                     data-text-incorrect="不對喔。桌面端具備自動加載 \`CLAUDE.md\` 規範的設計，完全不需要您手動複製貼上，這也是提高效率的關鍵。">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 9: Step 4 - Select Folder (PDF Page 12) -->
+      <section class="slide">
+        <div class="slide-content-card">
+          <img src="logo.jpg" alt="Logo" class="slide-logo" onerror="this.style.display='none'">
+          <div class="slide-title-group">
+            <span class="slide-tag">STEP 04 - WORKING DIRECTORY</span>
+            <h2 class="slide-title">選擇工作資料夾：<span class="highlight">劃定 AI 的工作邊界</span></h2>
+          </div>
+          <div class="slide-body grid-2">
+            <div class="quiz-reveal-content">
+              <p style="font-size: 1.6rem; line-height: 1.6;">在 Cowork 中，您需要明確選定一個本地資料夾，讓 Claude 擁有讀取、修改與新增的權限：</p>
+              <div class="highlight-box" style="margin-top:20px;">
+                <h4 style="font-size: 1.85rem; color: var(--color-primary); margin-bottom: 10px;">📂 選擇路徑與規範：</h4>
+                <ol style="margin-left:20px; font-size: 1.6rem; line-height:1.6;">
+                  <li style="margin-bottom:8px;">在 Cowork 介面點選「<strong>選擇資料夾 (Select Folder)</strong>」。</li>
+                  <li style="margin-bottom:8px;">挑選您本機上該專案專用的目錄。</li>
+                  <li style="margin-bottom:8px;"><strong>安全規範：</strong> AI 只能讀寫此資料夾內的檔案，外部不相關目錄將被安全隔絕。</li>
+                </ol>
+              </div>
+            </div>
+            <div style="display:flex; flex-direction:column; justify-content:center;">
+              <div class="quiz-container">
+                <div class="quiz-question">【權限範圍】關於 Cowork 選擇本地工作資料夾的安全性規範，以下何者正確？</div>
+                <div class="quiz-options">
+                  <div class="quiz-option" data-correct="false">A. Claude 會自動讀取並修改我整台電腦（C槽與所有隨身碟）的所有檔案</div>
+                  <div class="quiz-option" data-correct="true">B. Claude 只能存取並讀寫您選定的該工作資料夾，無法存取資料夾外的其他目錄，保護資安</div>
+                  <div class="quiz-option" data-correct="false">C. Claude 只有讀取權限，絕對無法寫入或建立任何新檔案</div>
+                </div>
+                <div class="quiz-explanation" 
+                     data-text-correct="完全正確！選定資料夾等於為 AI 劃定了明確的安全邊界。它所有的讀寫與執行權限都被限縮在該資料夾內，保護您電腦其他敏感數據的安全。" 
+                     data-text-incorrect="不對喔。Claude 在 Cowork 模式下是可以寫入檔案的，但它絕對無法越過您選定的資料夾去讀寫外部目錄，這樣能兼顧功能與資安。">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 10: Workspace Folder Example (PDF Page 13) -->
+      <section class="slide">
+        <div class="slide-content-card">
+          <img src="logo.jpg" alt="Logo" class="slide-logo" onerror="this.style.display='none'">
+          <div class="slide-title-group">
+            <span class="slide-tag">WORKSPACE SETUP TEMPLATE</span>
+            <h2 class="slide-title">建立您的專屬目錄：<span class="highlight">標準資料夾架構範例</span></h2>
+          </div>
+          <div class="slide-body grid-2">
+            <div class="quiz-reveal-content">
+              <p style="font-size: 1.6rem; line-height: 1.6;">建議在您選定的工作資料夾下配置以下清晰的「物理隔離」結構：</p>
+              <div class="code-container" style="margin-top:16px; padding: 12px 20px; font-size:1.6rem;">
+                <div class="code-header">目錄結構範例</div>
+                <pre style="font-size: 1.35rem; line-height: 1.5;"><code style="font-size: 1.35rem; line-height: 1.5;">📁 ~/COWORK-FOLDER/         # 工作根目錄 (放 CLAUDE.md)
+  📂 aboutme/               # 【唯讀】 個人背景與講義規範
+    - brand-voice.md        # 品牌風格、字詞偏好
+  📂 Templates/             # 【唯讀】 週報與簡報模板庫
+  📂 outputsfile/           # 【可寫】 AI 的唯一寫入輸出區
+    - 專案報告_v1.docx</code></pre>
+              </div>
+            </div>
+            <div style="display:flex; flex-direction:column; justify-content:center;">
+              <div class="quiz-container">
+                <div class="quiz-question">【防誤刪防線】為何建議在工作資料夾中，區分『唯讀參考區 (如 aboutme)』與『唯一輸出寫入區 (如 outputsfile)』？</div>
+                <div class="quiz-options">
+                  <div class="quiz-option" data-correct="false">A. 為了美化目錄結構，其實不分也沒關係</div>
+                  <div class="quiz-option" data-correct="false">B. 因為 Claude 升級後不支援在根目錄下寫入任何新檔案</div>
+                  <div class="quiz-option" data-correct="true">C. 為了防範 AI 在自動執行過程中誤刪或覆寫您重要的原始範本與參考資料，保護原始檔的安全</div>
+                </div>
+                <div class="quiz-explanation" 
+                     data-text-correct="答對了！在指令中限制寫入路徑，可以建立『物理隔離』，讓 AI 即使出錯也只會寫入 outputsfile/，絕不會動到您的原始範本！" 
+                     data-text-incorrect="不對喔。AI 在自動執行時有可能因為指令偏差而覆寫檔案，區分唯讀參考與可寫輸出是極清重要的防呆機制。">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 11: Global Instructions (PDF Page 14-16) -->
+      <section class="slide">
+        <div class="slide-content-card">
+          <img src="logo.jpg" alt="Logo" class="slide-logo" onerror="this.style.display='none'">
+          <div class="slide-title-group">
+            <span class="slide-tag">GLOBAL INSTRUCTIONS</span>
+            <h2 class="slide-title">全域指令設定：<span class="highlight">為 AI 設定永久工作規則</span></h2>
+          </div>
+          <div class="slide-body grid-2">
+            <div class="quiz-reveal-content">
+              <p>在 <strong>Settings → Cowork → Edit Global Instructions</strong> 中寫入的規則，會在每一次任務開始前自動載入。這是控制 AI 行為的最佳防火牆：</p>
+              <div class="code-container" style="margin: 12px 0; padding: 12px 18px; font-size:1.15rem;">
+                <div class="code-header">全域指令範本</div>
+                <pre><code>你好，我是 [姓名]，負責 [部門] 業務。
+- 偏好格式：精簡，多用 bullet points，繁體中文。
+- 安全防線：在執行任何本地檔案覆寫前，請務必先徵求同意。</code></pre>
+              </div>
+            </div>
+            <div style="display:flex; flex-direction:column; justify-content:center;">
+              <div class="quiz-container" style="margin: 0;">
+                <div class="quiz-question">【全域防線】哪一個是設定全域指令 (Global Instructions) 的最佳資安做法？</div>
+                <div class="quiz-options">
+                  <div class="quiz-option" data-correct="true">A. 寫入明確的資安防火牆（如：要求覆寫或刪除本地檔案前，必須先徵得我的同意）</div>
+                  <div class="quiz-option" data-correct="false">B. 把公司 ERP 的登入帳號密碼寫在全域指令中，方便 AI 隨時登入</div>
+                  <div class="quiz-option" data-correct="false">C. 不需要設定任何資安規則，讓 AI 自由發揮</div>
+                </div>
+                <div class="quiz-explanation" 
+                     data-text-correct="完全正確！全域指令是控制 AI 桌面端行為的最高準則，加入『檔案覆寫確認』的保險栓能徹底防止 AI 誤刪您本地的檔案。" 
+                     data-text-incorrect="不對喔。絕對不要把任何敏感帳密寫入全域指令中！全域指令是建立系統級防呆規則的最佳位置。">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 12: Instruction Hierarchy (PDF Page 17) -->
+      <section class="slide">
+        <div class="slide-content-card">
+          <img src="logo.jpg" alt="Logo" class="slide-logo" onerror="this.style.display='none'">
+          <div class="slide-title-group">
+            <span class="slide-tag">INSTRUCTION HIERARCHY</span>
+            <h2 class="slide-title">指令的層級結構：<span class="highlight">越具體優先度越高</span></h2>
+          </div>
+          <div class="slide-body grid-2">
+            <div class="quiz-reveal-content">
+              <p style="margin-bottom:12px; font-size:1.6rem; line-height: 1.6;">當指令有衝突時，AI 會依據以下層級覆蓋：</p>
+              <div class="feature-card" style="margin-bottom:8px; padding:12px 20px;">
+                <h4 style="font-size:1.85rem; color:var(--color-primary); margin-bottom:4px;">01. 個人偏好 (優先度最低)</h4>
+                <p style="font-size:1.6rem; color:var(--color-text-sub);">如 Preferences 設定「以繁體中文回答」。</p>
+              </div>
+              <div class="feature-card" style="margin-bottom:8px; padding:12px 20px;">
+                <h4 style="font-size:1.85rem; color:var(--color-primary); margin-bottom:4px;">02. 全域全景 (覆蓋偏好)</h4>
+                <p style="font-size:1.6rem; color:var(--color-text-sub);">Global Instructions。適用於所有本地 Cowork 任務。</p>
+              </div>
+              <div class="feature-card" style="margin-bottom:8px; padding:12px 20px;">
+                <h4 style="font-size:1.85rem; color:var(--color-primary); margin-bottom:4px;">03. 專案空間 (覆蓋全域)</h4>
+                <p style="font-size:1.6rem; color:var(--color-text-sub);">特定專案的 Instructions 欄位（定義專案角色）。</p>
+              </div>
+              <div class="feature-card" style="padding:12px 20px; border-color:var(--color-accent);">
+                <h4 style="font-size:1.85rem; color:var(--color-accent); margin-bottom:4px;">04. 資料夾特定 (優先度最高)</h4>
+                <p style="font-size:1.6rem; color:var(--color-text-main);">本地工作目錄的 <strong>`CLAUDE.md`</strong>。切換即載入。</p>
+              </div>
+            </div>
+            <div style="display:flex; flex-direction:column; justify-content:center;">
+              <div class="quiz-container">
+                <div class="quiz-question">【優先度挑戰】如果 `CLAUDE.md` 中的設定與全域指令 (Global Instructions) 衝突，AI 會以哪一個為準？</div>
+                <div class="quiz-options">
+                  <div class="quiz-option" data-correct="false">A. 全域指令 (Global Instructions)</div>
+                  <div class="quiz-option" data-correct="true">B. 本地工作目錄的 `CLAUDE.md` (層級越具體優先度最高)</div>
+                  <div class="quiz-option" data-correct="false">C. 會回報錯誤並拒絕執行</div>
+                </div>
+                <div class="quiz-explanation" 
+                     data-text-correct="完全正確！層級越細、越接近工作現場的指令（如本地 \`CLAUDE.md\`）優先權最高，這能讓您在不同資料夾實作完全不同的工作流。" 
+                     data-text-incorrect="不對喔。全域指令是通用規劃，但一旦進入特定目錄，Claude 會優先遵循該目錄下 \`CLAUDE.md\` 的規定。">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 13: Prompt Template (PDF Page 18) -->
+      <section class="slide">
+        <div class="slide-content-card">
+          <img src="logo.jpg" alt="Logo" class="slide-logo" onerror="this.style.display='none'">
+          <div class="slide-title-group">
+            <span class="slide-tag">PROMPT ENGINEERING</span>
+            <h2 class="slide-title">寫出好指令：<span class="highlight">萬用 Prompt 提示詞模板</span></h2>
+          </div>
+          <div class="slide-body grid-2">
+            <div class="quiz-reveal-content">
+              <p>不要讓 AI 盲目寫報告。使用「先探索、再確認、後執行」的萬用範本：</p>
+              <div class="code-container" style="margin-top:12px; padding: 12px 20px; font-size:1.15rem;">
+                <div class="code-header">萬用 Prompt</div>
+                <pre style="white-space: pre-wrap;"><code>我想要【指定任務】來達成【目標】。
+
+在執行前，請先瀏覽我的工作資料夾：
+1. 列出你認為缺少的必要資料。
+2. 以 AskUserQuestion 詢問我以確認大綱與格式。</code></pre>
+              </div>
+            </div>
+            <div style="display:flex; flex-direction:column; justify-content:center;">
+              <div class="quiz-container">
+                <div class="quiz-question">【防呆思維】在萬用 Prompt 範本中，為什麼要要求 AI 『先列出大綱並詢問確認後再執行』？</div>
+                <div class="quiz-options">
+                  <div class="quiz-option" data-correct="false">A. 為了延長與 AI 的對話時間</div>
+                  <div class="quiz-option" data-correct="false">B. 因為 AI 無法一次完成這項任務</div>
+                  <div class="quiz-option" data-correct="true">C. 建立人工確認防線，確保 AI 完整掌握資料狀態與您的格式要求後才動手寫檔，防範產生垃圾檔案</div>
+                </div>
+                <div class="quiz-explanation" 
+                     data-text-correct="答對了！AI 的強項是快速執行，但需要人類在關鍵方向上把關。先對齊大綱，能大幅省去後續來回修改檔案的時間成本。" 
+                     data-text-incorrect="不對喔。AI 完全有能力一次寫完，但如果沒有先確認大綱，很可能因為理解偏差而產生不符合預期的檔案，多此一步是為了提高成功率。">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 14: Cowork Cases Overview (PDF Page 19-20) -->
+      <section class="slide">
+        <div class="slide-content-card">
+          <img src="logo.jpg" alt="Logo" class="slide-logo" onerror="this.style.display='none'">
+          <div class="slide-title-group">
+            <span class="slide-tag">COWORK USE CASES OVERVIEW</span>
+            <h2 class="slide-title">自動化實務：<span class="highlight">每個案例 Chat 做不到，Cowork 能做到</span></h2>
+          </div>
+          <div class="slide-body grid-2">
+            <div class="quiz-reveal-content">
+              <p style="font-size: 1.6rem; line-height: 1.6;">桌面端 Cowork 與網頁端 Chat 的本質差異，體現在它對「本地檔案的直接操作能力」：</p>
+              <div class="timeline" style="margin-top:20px;">
+                <div class="timeline-item">
+                  <div class="timeline-time" style="font-size: 1.35rem;">Case 1</div>
+                  <div class="timeline-marker"><div class="timeline-dot"></div><div class="timeline-line"></div></div>
+                  <div class="timeline-content"><h4 style="font-size:1.85rem;">草稿直接存 Word</h4><p style="font-size:1.6rem; line-height: 1.5;">省去網頁複製貼上的段落跑版與重新排版時間。</p></div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-time" style="font-size: 1.35rem;">Case 2</div>
+                  <div class="timeline-marker"><div class="timeline-dot"></div><div class="timeline-line"></div></div>
+                  <div class="timeline-content"><h4 style="font-size:1.85rem;">批量讀 PDF 轉 Excel</h4><p style="font-size:1.6rem; line-height: 1.5;">一次讀取多個檔案核對，直接在本機輸出 Excel 對照表。</p></div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-time" style="font-size: 1.35rem;">Case 3</div>
+                  <div class="timeline-marker"><div class="timeline-dot"></div><div class="timeline-line"></div></div>
+                  <div class="timeline-content"><h4 style="font-size:1.85rem;">搜尋競品出簡報</h4><p style="font-size:1.6rem; line-height: 1.5;">連網搜集最新同業動態，直接產出可編輯的簡報檔。</p></div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-time" style="font-size: 1.35rem;">Case 4</div>
+                  <div class="timeline-marker"><div class="timeline-dot"></div></div>
+                  <div class="timeline-content"><h4 style="font-size:1.85rem;">掃描改名與分類</h4><p style="font-size:1.6rem; line-height: 1.5;">自動整理本機下載區，批次建立資料夾並命名歸檔。</p></div>
+                </div>
+              </div>
+            </div>
+            <div style="display:flex; flex-direction:column; justify-content:center;">
+              <div class="quiz-container">
+                <div class="quiz-question">【功能邊界】以下哪一項任務是網頁端 Chat 無法完成，但桌面端 Cowork 的核心強項？</div>
+                <div class="quiz-options">
+                  <div class="quiz-option" data-correct="true">A. 讀取本地資料夾的 10 份合約，跨檔案核對金額並直接在本機輸出 Excel 對照表</div>
+                  <div class="quiz-option" data-correct="false">B. 請 AI 幫我將一篇繁體中文的文章翻譯成英文</div>
+                  <div class="quiz-option" data-correct="false">C. 詢問 AI 關於國際原油市場的歷史價格</div>
+                </div>
+                <div class="quiz-explanation" 
+                     data-text-correct="完全正確！網頁端受限於無法存取您本地檔案系統，只能用複製貼上。而桌面端 Cowork 能自動讀寫資料夾、建立並儲存 Excel 或 Word，實現自動化。" 
+                     data-text-incorrect="不對喔。翻譯文章或詢問歷史知識是網頁版 Chat 就能做到的。但跨多個本地檔案讀取並寫入 Excel，是桌面版 Cowork 的獨門絕技。">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 15: Case 1 - Draft to Word (PDF Page 21-22) -->
+      <section class="slide">
+        <div class="slide-content-card">
+          <img src="logo.jpg" alt="Logo" class="slide-logo" onerror="this.style.display='none'">
+          <div class="slide-title-group">
+            <span class="slide-tag">CASE 01 - WORD GENERATION</span>
+            <h2 class="slide-title">Case 01：<span class="highlight">草稿直接存成 Word</span></h2>
+          </div>
+          <div class="slide-body grid-2">
+            <div class="quiz-reveal-content">
+              <p style="font-size: 1.6rem; line-height: 1.6;">解決網頁複製貼上時的格式跑版與排版耗時，讓 AI 直接產出完好格式的 Word 文件：</p>
+              <div class="highlight-box" style="margin-top:16px;">
+                <h4 style="font-size: 1.85rem; color: var(--color-primary); margin-bottom: 10px;">📝 操作步驟：</h4>
+                <ol style="margin-left: 20px; font-size: 1.6rem; line-height: 1.6;">
+                  <li style="margin-bottom:6px;">在工作資料夾放入您的想法草稿或會議記錄。</li>
+                  <li style="margin-bottom:6px;">說明輸出規範（如：標題樣式、輸出成 Word 檔案）。</li>
+                  <li style="margin-bottom:6px;">AI 自動呼叫 Python 在本機直接建立 <strong>.docx</strong> 檔。</li>
+                </ol>
+              </div>
+            </div>
+            <div>
+              <div class="feature-card" style="padding: 20px; margin-bottom: 16px;">
+                <h3 style="font-size: 1.85rem; margin-bottom: 10px;">💡 實務指令：</h3>
+                <div class="code-container" style="margin: 8px 0; padding: 10px 14px; font-size: 1.6rem;">
+                  <code style="color:var(--color-accent); font-size: 1.35rem; line-height: 1.5;">"讀取 data/草稿.txt 整理成提案報告，套用標題樣式存成 outputs/正式提案_v1.docx"</code>
+                </div>
+              </div>
+              <div class="quiz-container" style="margin: 0; padding: 20px;">
+                <div class="quiz-question" style="font-size: 1.25rem; margin-bottom: 12px;">【互動問答】在此案例中，Claude 是如何直接產生 Word 檔案的？</div>
+                <div class="quiz-options" style="gap: 8px;">
+                  <div class="quiz-option" style="padding: 10px 16px; font-size: 1.15rem;" data-correct="false">A. 它在畫面上叫你手動複製貼上</div>
+                  <div class="quiz-option" style="padding: 10px 16px; font-size: 1.15rem;" data-correct="true">B. 它會在背景撰寫並執行 Python 腳本（利用 python-docx 套件）自動產生檔案</div>
+                  <div class="quiz-option" style="padding: 10px 16px; font-size: 1.15rem;" data-correct="false">C. 透過遠端連線至 Microsoft 365 雲端伺服器在線上轉檔而成</div>
+                </div>
+                <div class="quiz-explanation" style="font-size: 1.15rem; padding: 12px 16px; margin-top: 12px;"
+                     data-text-correct="答對了！AI 具備程式撰寫與執行能力 (Capabilities中的Run Code)，它會用 Python 直接建立 Word 檔，免去您複製排版的煩惱。" 
+                     data-text-incorrect="不對喔。手動複製貼上是網頁版做法，桌面版會透過背景執行 Python 程式直接產出檔案。">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 16: Case 2 - PDF to Excel (PDF Page 23-24) -->
+      <section class="slide">
+        <div class="slide-content-card">
+          <img src="logo.jpg" alt="Logo" class="slide-logo" onerror="this.style.display='none'">
+          <div class="slide-title-group">
+            <span class="slide-tag">CASE 02 - BATCH PDF PROCESSING</span>
+            <h2 class="slide-title">Case 02：<span class="highlight">批量讀 PDF 整理成 Excel</span></h2>
+          </div>
+          <div class="slide-body grid-2">
+            <div class="quiz-reveal-content">
+              <p style="font-size: 1.6rem; line-height: 1.6;">不需再一個個開 PDF 並複製貼上至試算表，AI 能直接跨多份文件分析，彙整為 Excel 對照表：</p>
+              <div class="highlight-box accent" style="margin-top:16px;">
+                <h4 style="font-size: 1.85rem; color: var(--color-primary); margin-bottom: 10px;">📊 操作步驟：</h4>
+                <ol style="margin-left: 20px; font-size: 1.6rem; line-height: 1.6;">
+                  <li style="margin-bottom:6px;">將多份發票或合約 PDF 放入專屬資料夾。</li>
+                  <li style="margin-bottom:6px;">定義要擷取的關鍵資料項目 (如日期、金額)。</li>
+                  <li style="margin-bottom:6px;">AI 掃描所有 PDF並跨檔案產出 <strong>.xlsx</strong> 對照表。</li>
+                </ol>
+              </div>
+            </div>
+            <div>
+              <div class="feature-card" style="padding: 20px; margin-bottom: 16px;">
+                <h3 style="font-size: 1.85rem; margin-bottom: 10px;">💡 實務指令：</h3>
+                <div class="code-container" style="margin: 8px 0; padding: 10px 14px; font-size: 1.6rem;">
+                  <code style="color:var(--color-accent); font-size: 1.35rem; line-height: 1.5;">"讀取 contracts/ 資料夾內的所有合約 PDF，比對每份合約金額與到期日，整理成一張對照表存成 outputs/合約追蹤表.xlsx"</code>
+                </div>
+              </div>
+              <div class="quiz-container" style="margin: 0; padding: 20px;">
+                <div class="quiz-question" style="font-size: 1.25rem; margin-bottom: 12px;">【互動問答】相比於將 PDF 上傳至外部第三方轉檔網站，Cowork 的安全優勢是？</div>
+                <div class="quiz-options" style="gap: 8px;">
+                  <div class="quiz-option" style="padding: 10px 16px; font-size: 1.15rem;" data-correct="false">A. 轉檔速度會變快十倍</div>
+                  <div class="quiz-option" style="padding: 10px 16px; font-size: 1.15rem;" data-correct="false">B. 能夠自動為所有匯出的 Excel 檔案進行雲端加密備份</div>
+                  <div class="quiz-option" style="padding: 10px 16px; font-size: 1.15rem;" data-correct="true">C. 檔案與數據均在本地執行與輸出，完全不經過未授權的外部第三方網站，防範資料洩漏</div>
+                </div>
+                <div class="quiz-explanation" style="font-size: 1.15rem; padding: 12px 16px; margin-top: 12px;"
+                     data-text-correct="完全正確！本地端執行 Python 解析 PDF 並產出 Excel，保障敏感商業合約、發票資料絕不外流，完美符合企業資安規範。" 
+                     data-text-incorrect="不對喔。安全性才是核心，利用 Cowork 能在本地資料夾進行全部處理，完全不需將檔案傳給不安全的外部第三方網站。">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 17: Case 3 - Competitor search (PDF Page 25-26) -->
+      <section class="slide">
+        <div class="slide-content-card">
+          <img src="logo.jpg" alt="Logo" class="slide-logo" onerror="this.style.display='none'">
+          <div class="slide-title-group">
+            <span class="slide-tag">CASE 03 - COMPETITOR PRESENTATION</span>
+            <h2 class="slide-title">Case 03：<span class="highlight">搜尋競品直接出簡報 (.pptx)</span></h2>
+          </div>
+          <div class="slide-body grid-2">
+            <div class="quiz-reveal-content">
+              <p style="font-size: 1.6rem; line-height: 1.6;">整合「網頁搜尋、內容大綱規劃、PowerPoint 檔案生成」三大步驟，實現一鍵自動化簡報製作：</p>
+              <div class="highlight-box" style="margin-top:16px;">
+                <h4 style="font-size: 1.85rem; color: var(--color-primary); margin-bottom: 10px;">🖥️ 操作步驟：</h4>
+                <ol style="margin-left: 20px; font-size: 1.6rem; line-height: 1.6;">
+                  <li style="margin-bottom:6px;">給定想研究的競品主題或市場法規。</li>
+                  <li style="margin-bottom:6px;">AI 呼叫網路搜尋即時抓取最新同業定價與規格。</li>
+                  <li style="margin-bottom:6px;">AI 編寫大綱並在本機直接輸出可編輯的 <strong>.pptx</strong> 簡報。</li>
+                </ol>
+              </div>
+            </div>
+            <div>
+              <div class="feature-card" style="padding: 20px; margin-bottom: 16px;">
+                <h3 style="font-size: 1.85rem; margin-bottom: 10px;">💡 實務指令：</h3>
+                <div class="code-container" style="margin: 8px 0; padding: 10px 14px; font-size: 1.6rem;">
+                  <code style="color:var(--color-accent); font-size: 1.35rem; line-height: 1.5;">"上網搜尋三個最新的 AI 協作工具競品，分析他們的定價與核心功能優缺點，並以此製作一份 8 頁的分析簡報存為 outputs/競品分析簡報.pptx"</code>
+                </div>
+              </div>
+              <div class="quiz-container" style="margin: 0; padding: 20px;">
+                <div class="quiz-question" style="font-size: 1.25rem; margin-bottom: 12px;">【互動問答】此案例中，AI 是如何獲取最新競品定價並產出 PowerPoint 簡報的？</div>
+                <div class="quiz-options" style="gap: 8px;">
+                  <div class="quiz-option" style="padding: 10px 16px; font-size: 1.15rem;" data-correct="true">A. 呼叫連網搜尋功能即時抓取最新網頁數據，再在本地以 Python 建立 PPT 檔案</div>
+                  <div class="quiz-option" style="padding: 10px 16px; font-size: 1.15rem;" data-correct="false">B. 依靠 AI 舊有的離線知識</div>
+                  <div class="quiz-option" style="padding: 10px 16px; font-size: 1.15rem;" data-correct="false">C. 自動向競爭對手寄送詢價信件並等待回覆</div>
+                </div>
+                <div class="quiz-explanation" style="font-size: 1.15rem; padding: 12px 16px; margin-top: 12px;"
+                     data-text-correct="答對了！AI 結合了實時 Web Search 與本地 PowerPoint Python 寫入套件，一氣呵成完成市場調查與簡報製作！" 
+                     data-text-incorrect="不對喔。競品定價隨時在變，只靠離線知識會過期。AI 會實時上網搜尋抓取最新定價，再寫成 PPT 檔案。">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 18: Case 4 - Folder Scan (PDF Page 27-28) -->
+      <section class="slide">
+        <div class="slide-content-card">
+          <img src="logo.jpg" alt="Logo" class="slide-logo" onerror="this.style.display='none'">
+          <div class="slide-title-group">
+            <span class="slide-tag">CASE 04 - FILE MANAGEMENT</span>
+            <h2 class="slide-title">Case 04：<span class="highlight">掃描本地資料夾整理命名</span></h2>
+          </div>
+          <div class="slide-body grid-2">
+            <div class="quiz-reveal-content">
+              <p style="font-size: 1.6rem; line-height: 1.6;">解放您混亂的下載區與桌機檔案，讓 AI 依照您設定的規則自動建立子目錄、重命名與分類歸檔：</p>
+              <div class="highlight-box accent" style="margin-top:16px;">
+                <h4 style="font-size: 1.85rem; color: var(--color-primary); margin-bottom: 10px;">📁 操作步驟：</h4>
+                <ol style="margin-left: 20px; font-size: 1.6rem; line-height: 1.6;">
+                  <li style="margin-bottom:6px;">選定電腦中雜亂的資料夾（如 `Downloads`）。</li>
+                  <li style="margin-bottom:6px;">告訴 AI 您的分類邏輯（如：PDF 檔依內容標題重新命名）。</li>
+                  <li style="margin-bottom:6px;">AI 掃描副檔名與內部標題，自動建立子資料夾並整理移動。</li>
+                </ol>
+              </div>
+            </div>
+            <div>
+              <div class="feature-card" style="padding: 20px; margin-bottom: 16px;">
+                <h3 style="font-size: 1.85rem; margin-bottom: 10px;">💡 實務指令：</h3>
+                <div class="code-container" style="margin: 8px 0; padding: 10px 14px; font-size: 1.6rem;">
+                  <code style="color:var(--color-accent); font-size: 1.35rem; line-height: 1.5;">"掃描 Downloads 資料夾，將所有的螢幕截圖按月份搬到 Screenshot/，將 PDF 檔案按其內容標題改名存到 Documents/ 之中。"</code>
+                </div>
+              </div>
+              <div class="quiz-container" style="margin: 0; padding: 20px;">
+                <div class="quiz-question" style="font-size: 1.25rem; margin-bottom: 12px;">【安全防線】執行大批量的檔案改名或移動前，我們該如何防禦 AI 誤改重要檔案？</div>
+                <div class="quiz-options" style="gap: 8px;">
+                  <div class="quiz-option" style="padding: 10px 16px; font-size: 1.15rem;" data-correct="true">A. 在 Prompt 或全域指令要求：『在正式執行改名或搬移前，必須先列出變更大綱並徵得我同意』</div>
+                  <div class="quiz-option" style="padding: 10px 16px; font-size: 1.15rem;" data-correct="false">B. 相信 AI 不會出錯，不需要任何防護</div>
+                  <div class="quiz-option" style="padding: 10px 16px; font-size: 1.15rem;" data-correct="false">C. 定期將整個硬碟複製備份到外部隨身碟以防萬一</div>
+                </div>
+                <div class="quiz-explanation" style="font-size: 1.15rem; padding: 12px 16px; margin-top: 12px;"
+                     data-text-correct="完全正確！在批次異動硬碟檔案前，設計一個『大綱確認』的卡關機制，是操作本機檔案最安全、最推薦的工作習慣。" 
+                     data-text-incorrect="不對喔。即使是強大的 AI 也有可能因為路徑比對偏差而誤移重要檔案。務必加入『先列出大綱，取得人類同意後才執行』的規則。">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 19: Security Compliance Tracker (Interactive) -->
+      <section class="slide">
+        <div class="slide-content-card">
+          <img src="logo.jpg" alt="Logo" class="slide-logo" onerror="this.style.display='none'">
+          <div class="slide-title-group">
+            <span class="slide-tag">SECURITY AUDIT TOOL</span>
+            <h2 class="slide-title">實戰演練：<span class="highlight">您的 AI 使用安全嗎？自我檢測</span></h2>
+          </div>
+          <div class="slide-body">
+            <div class="security-checklist-widget">
+              <div class="checklist-header">
+                <span class="checklist-title">資安防護合規指標</span>
+                <span class="checklist-score" id="security-score">0 / 100</span>
+              </div>
+              <div class="checklist-items">
+                <div class="checklist-item" id="chk-optout">
+                  <div class="checklist-checkbox"></div>
+                  <div class="checklist-item-body">
+                    <span class="checklist-item-title">確認關閉模型訓練 (Opt-out) 或使用付費 Team/Enterprise 版本</span>
+                    <span class="checklist-item-desc">確保您輸入的對話或上傳的財務報表，不會被 Anthropic 收錄作為未來大模型的公開訓練教材。</span>
+                  </div>
+                </div>
+                <div class="checklist-item" id="chk-sandbox">
+                  <div class="checklist-checkbox"></div>
+                  <div class="checklist-item-body">
+                    <span class="checklist-item-title">建立獨立的本地工作目錄，不直接對外開放整台電腦存取</span>
+                    <span class="checklist-item-desc">在 Cowork 選定資料夾時，避免選擇「整個C槽」或「使用者根目錄」。改用專屬的 `~/Cowork-Folder/`。</span>
+                  </div>
+                </div>
+                <div class="checklist-item" id="chk-masking">
+                  <div class="checklist-checkbox"></div>
+                  <div class="checklist-item-body">
+                    <span class="checklist-item-title">去識別化 (Data Masking) 意識落實</span>
+                    <span class="checklist-item-desc">在上傳員工考核、薪資試算表或客戶名單前，手動或使用腳本移除身分證字號、電話及姓名，改用 ID 取代。</span>
+                  </div>
+                </div>
+                <div class="checklist-item" id="chk-claudemd">
+                  <div class="checklist-checkbox"></div>
+                  <div class="checklist-item-body">
+                    <span class="checklist-item-title">在 CLAUDE.md 中寫入明確的安全操作防線</span>
+                    <span class="checklist-item-desc">在設定檔加入：「如需連網搜尋，嚴禁外傳任何包含公司財務數字的關鍵字。」</span>
+                  </div>
+                </div>
+              </div>
+              <div style="margin-top:20px; text-align:right; font-size:1.2rem;">
+                <span style="font-weight:600;">防護安全評級：</span>
+                <span id="security-indicator" style="font-weight:700;">危險！高洩漏風險 ⚠️</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 20: Prompt Builder (Interactive) -->
+      <section class="slide">
+        <div class="slide-content-card">
+          <img src="logo.jpg" alt="Logo" class="slide-logo" onerror="this.style.display='none'">
+          <div class="slide-title-group">
+            <span class="slide-tag">INTERACTIVE PROMPT GENERATOR</span>
+            <h2 class="slide-title">精準 Prompt 組合器：<span class="highlight">寫出能直接做事的指令</span></h2>
+          </div>
+          <div class="slide-body">
+            <p style="font-size:1.15rem; color:var(--color-text-sub); margin-bottom:12px;">透過下拉選單組合出專業的指令，並可一鍵複製至對話視窗。這能避免 AI 給出空泛的回答。</p>
+            <div class="prompt-builder">
+              <div class="builder-controls">
+                <div class="builder-group">
+                  <div class="builder-label">1. 設定 AI 角色 (Role)</div>
+                  <select class="builder-select" id="prompt-role">
+                    <option value="資深財務分析師">資深財務分析師</option>
+                    <option value="油品與能源市場研究員">油品與能源市場研究員</option>
+                    <option value="行政人資管理顧問">行政人資管理顧問</option>
+                    <option value="專業簡報製作人">專業簡報製作人</option>
+                    <option value="業務開發經理人">業務開發經理人</option>
+                  </select>
+                </div>
+                <div class="builder-group">
+                  <div class="builder-label">2. 核心目標 (Goal)</div>
+                  <select class="builder-select" id="prompt-goal">
+                    <option value="分析本季度營運支出，並找出異常增長或潛在節稅空間">分析營運支出與潛在空間</option>
+                    <option value="針對本月同業競爭對手的定價變化，撰寫監測速報">撰寫同業定價監測速報</option>
+                    <option value="將本週多份會議逐字稿進行去蕪存菁，產出行動清單">會議記錄產出行動清單</option>
+                    <option value="根據客戶的背景資料，設計 8 頁客戶開發簡報大綱">設計 8 頁客戶提案大綱</option>
+                  </select>
+                </div>
+                <div class="builder-group">
+                  <div class="builder-label">3. 具體指令 (Action)</div>
+                  <select class="builder-select" id="prompt-action">
+                    <option value="讀取 data 資料夾內的所有 .xlsx 檔案，計算各類別月增率，並標示出月增幅大於 15% 的項目。">讀取資料夾試算表並標示異常</option>
+                    <option value="上網搜尋本週內，關於綠能、碳權或油品交易的最新法規變動，整理其影響。">上網搜尋綠能與油品新法規</option>
+                    <option value="比對 outputs/ 內的三份會議摘要，找出各部門在專案進度上的重疊衝突點。">比對多份文件找出衝突點</option>
+                    <option value="依據 PPT-templates.md 的大綱風格，建立每頁簡報的標題與 3 點簡要論述。">套用簡報風格生成各頁內容</option>
+                  </select>
+                </div>
+                <div class="builder-group">
+                  <div class="builder-label">4. 輸出格式 (Format)</div>
+                  <select class="builder-select" id="prompt-format">
+                    <option value="以 Markdown 格式表格呈現數據，並在下方以 3 點 Bullet Points 摘要異常項目。">表格 + Bullet Points 摘要</option>
+                    <option value="整理成一封專業回報郵件的草稿，包含主旨、正文及附件清單。">專業電子郵件格式</option>
+                    <option value="直接存入 outputs/ 資料夾中，檔名命名為 專案分析_日期_v1.docx。">直接存入指定資料夾(.docx)</option>
+                  </select>
+                </div>
+              </div>
+              <div class="builder-output">
+                <div class="code-header">產出的 Prompt 預覽</div>
+                <textarea id="prompt-output-text" readonly></textarea>
+                <div class="builder-actions">
+                  <button class="btn-primary" id="copy-prompt-btn">
+                    <span class="material-icons">content_copy</span> 複製 Prompt
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 21: CLAUDE.md Dynamic Generator -->
+      <section class="slide">
+        <div class="slide-content-card">
+          <img src="logo.jpg" alt="Logo" class="slide-logo" onerror="this.style.display='none'">
+          <div class="slide-title-group">
+            <span class="slide-tag">CLAUDE.MD GENERATOR</span>
+            <h2 class="slide-title">互動式建立：<span class="highlight">複製符合您角色的 CLAUDE.md</span></h2>
+          </div>
+          <div class="slide-body grid-2">
+            <div>
+              <p style="font-size: 1.6rem; line-height: 1.6;">在工作目錄放入 <strong>`CLAUDE.md`</strong>，AI 會在切換資料夾時自動載入。請在下方選擇您的職業角色，產出對應的專屬範本並複製建立：</p>
+              
+              <div style="margin-top: 24px;">
+                <label class="builder-label" style="display:block; margin-bottom:8px;">選擇您的 AI 角色背景：</label>
+                <select class="builder-select" id="claude-md-role-select" style="max-width:320px; font-size:1.35rem; padding: 10px;">
+                  <option value="資深財務分析師">資深財務分析師</option>
+                  <option value="油品與能源市場研究員">油品與能源市場研究員</option>
+                  <option value="行政人資管理顧問">行政人資管理顧問</option>
+                  <option value="專業簡報製作人">專業簡報製作人</option>
+                  <option value="業務開發經理人">業務開發經理人</option>
+                </select>
+                <button class="btn-primary" id="copy-claudemd-btn" style="margin-top: 20px;">
+                  <span class="material-icons">content_copy</span> 一鍵複製 CLAUDE.md
+                </button>
+              </div>
+
+              <div class="highlight-box accent" style="margin-top: 24px;">
+                <h4 style="font-size: 1.85rem; color: var(--color-primary); margin-bottom: 10px;">💡 為什麼這很重要？</h4>
+                <p style="font-size:1.6rem; line-height: 1.6;">「一個專案、一個說明書」。AI 讀取此檔後即可知道您的說話風格與輸出規則，下一次開對話視窗，不用再重複打一樣的背景提示字！</p>
+              </div>
+            </div>
+            <div>
+              <div class="code-container" style="height: 100%; min-height: 400px; margin-top:0;">
+                <div class="code-header">CLAUDE.md 範本內容</div>
+                <pre style="margin: 0;"><code id="claudemd-code" style="white-space: pre-wrap; font-size:1.05rem;"></code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 22: Role Case Studies (Interactive Tab) -->
+      <section class="slide">
+        <div class="slide-content-card">
+          <img src="logo.jpg" alt="Logo" class="slide-logo" onerror="this.style.display='none'">
+          <div class="slide-title-group">
+            <span class="slide-tag">ROLE-BASED PRACTICAL CASES</span>
+            <h2 class="slide-title">角色案例拆解：<span class="highlight">AI 如何應用在您的本業？</span></h2>
+          </div>
+          <div class="slide-body">
+            <div class="case-study-widget">
+              <div class="tabs-header">
+                <button class="tab-btn active" data-tab="tab-finance">財務 / 投資管理</button>
+                <button class="tab-btn" data-tab="tab-admin">行政 / 人資管理</button>
+                <button class="tab-btn" data-tab="tab-energy">油品 / 能源事業</button>
+                <button class="tab-btn" data-tab="tab-marketing">行銷 / 業務開發</button>
+              </div>
+
+              <!-- Tab 1: Finance -->
+              <div class="tab-pane active" id="tab-finance">
+                <div class="case-grid">
+                  <div class="case-details">
+                    <span class="case-tagline">📊 複雜數據比對與三表自動化</span>
+                    <p>財務人員最花時間在不同 Excel 報表間的核對。利用 Cowork 連結本機資料庫與試算表，能做到以前需要寫巨集才能完成的分析。</p>
+                    <ul class="case-list">
+                      <li><i class="material-icons">check_circle</i> <strong>三表對齊：</strong> 上傳資產負債表、損益表、現金流量表，自動進行平衡性校正與交叉比對。</li>
+                      <li><i class="material-icons">check_circle</i> <strong>趨勢報告草擬：</strong> 分析多期財務數據，找出毛利率或營業費用異常跳升點，直接寫成書面報告草稿。</li>
+                    </ul>
+                  </div>
+                  <div class="case-command-box">
+                    <div class="case-command-title">實戰 Prompt 範例</div>
+                    <div class="case-command-content">
+                      "讀取本機的 '2026_Q1_Expenses.xlsx'，分析各部門的行銷與研發支出，找出相比上季成長超過 20% 的項目，將分析結果與原因寫成一份財務月報，直接在本機輸出成 .docx 檔案。"
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tab 2: Admin -->
+              <div class="tab-pane" id="tab-admin">
+                <div class="case-grid">
+                  <div class="case-details">
+                    <span class="case-tagline">👥 規章比對、會議記錄與流程優化</span>
+                    <p>行政人資每天要面對大量法規、請假單、公告以及漫長的會議逐字稿。AI 能大幅縮減資訊摘要與流程的重複性工作。</p>
+                    <ul class="case-list">
+                      <li><i class="material-icons">check_circle</i> <strong>逐字稿速成待辦：</strong> 上傳 1 小時的跨部門會議錄音檔/逐字稿，1 分鐘內理出各部門的主責人、交辦事項與期限。</li>
+                      <li><i class="material-icons">check_circle</i> <strong>員工手冊合規性查核：</strong> 比對最新勞基法條文與公司現行的管理辦法，標示出需要修改的條款。</li>
+                    </ul>
+                  </div>
+                  <div class="case-command-box">
+                    <div class="case-command-title">實戰 Prompt 範例</div>
+                    <div class="case-command-content">
+                      "讀取 ~/Downloads 目錄下昨天的 'PM_Meeting_Transcript.txt'，梳理出所有關於新產品上線的決定事項、各負責人 (Owner) 及其對應的截止日期。完成後，將待辦清單寫入我的 Notion 工作板上。"
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tab 3: Energy -->
+              <div class="tab-pane" id="tab-energy">
+                <div class="case-grid">
+                  <div class="case-details">
+                    <span class="case-tagline">🛢️ 國際油價、能源政策與競品監控</span>
+                    <p>油品與能源事業受國際總體經濟與地緣政治波動極大。同仁可設定 AI 自動化追蹤國內外最新的牌價與法規資訊。</p>
+                    <ul class="case-list">
+                      <li><i class="material-icons">check_circle</i> <strong>市場日報自動化：</strong> 連網抓取當天 Brent, WTI 原油價格與國際能源署 (IEA) 的新聞，產出內部精簡日報。</li>
+                      <li><i class="material-icons">check_circle</i> <strong>工廠規劃與碳排合規：</strong> 整理新設廠區的環評標準，快速檢索相關低碳與減排補貼政策。</li>
+                    </ul>
+                  </div>
+                  <div class="case-command-box">
+                    <div class="case-command-title">實戰 Prompt 範例</div>
+                    <div class="case-command-content">
+                      "上網搜尋並比對國內最新公告的碳盤查指引與碳權抵換條例。分析這對於我們油品事業部的影響，並以 10 頁簡報的形式架構大綱，存成 outputs/碳盤查影響大綱.pptx。"
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tab 4: Marketing -->
+              <div class="tab-pane" id="tab-marketing">
+                <div class="case-grid">
+                  <div class="case-details">
+                    <span class="case-tagline">📈 社群文案、廣告成效與競品監測</span>
+                    <p>行銷人員最需要隨時掌握市場趨勢，並定時產出多平台素材。AI 可以成為您 24 小時不休息的競品監測與文案小幫手。</p>
+                    <ul class="case-list">
+                      <li><i class="material-icons">check_circle</i> <strong>廣告素材庫自動爬取：</strong> 連結爬蟲工具，自動監測競爭對手在 Facebook Ad Library 投放的文案與圖片，進行素材分析。</li>
+                      <li><i class="material-icons">check_circle</i> <strong>多平台內容轉換：</strong> 撰寫一篇長文後，交給 Cowork 同時轉換為 Facebook 貼文、Instagram 圖卡文案與電子報。</li>
+                    </ul>
+                  </div>
+                  <div class="case-command-box">
+                    <div class="case-command-title">實戰 Prompt 範例</div>
+                    <div class="case-command-content">
+                      "幫我寫一篇關於新能生物科技產品的行銷長文。完成後，將長文改寫成適合 LinkedIn (專業語氣) 與 Facebook (活潑語氣) 兩種格式，直接存入本機資料夾，檔名命名為：BioTech_Post_Draft.txt。"
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 23: Advanced Features -->
+      <section class="slide">
+        <div class="slide-content-card">
+          <img src="logo.jpg" alt="Logo" class="slide-logo" onerror="this.style.display='none'">
+          <div class="slide-title-group">
+            <span class="slide-tag">ADVANCED AUTOMATION</span>
+            <h2 class="slide-title">進階功能大解鎖：<span class="highlight">讓 AI 主動為您工作</span></h2>
+          </div>
+          <div class="slide-body grid-2">
+            <div>
+              <div class="feature-card" style="margin-bottom:16px; padding:24px;">
+                <h3 style="color:var(--color-primary); font-size:1.85rem;"><i class="material-icons">schedule</i> 1. 排程任務 (Scheduled Tasks)</h3>
+                <p style="font-size:1.6rem; line-height: 1.6;">不用你盯著，AI 自己跑。可以設定「每天早上 9:00」自動執行搜尋產業新聞並產出晨報，或是「每週五下午 4:00」自動拉取工作資料夾數據生成週報。</p>
+              </div>
+              <div class="feature-card" style="margin-bottom:16px; padding:24px;">
+                <h3 style="color:var(--color-primary); font-size:1.85rem;"><i class="material-icons">cell_tower</i> 2. 行動遙控 (Dispatch)</h3>
+                <p style="font-size:1.6rem; line-height: 1.6;">人在外面，電腦在家工作。出門在外只需用手機 Claude App 傳送指令給同一個專案對話，家中的桌面端 Cowork 便會接單，在桌機上執行查找與本地檔案產出，再回傳給您的手機。</p>
+              </div>
+            </div>
+            <div>
+              <div class="feature-card" style="margin-bottom:16px; padding:24px;">
+                <h3 style="color:var(--color-primary); font-size:1.85rem;"><i class="material-icons">pan_tool_alt</i> 3. 螢幕控制三層級 (Computer Use)</h3>
+                <p style="font-size:1.6rem; line-height: 1.6;">當 API 與網頁操作都不支援時，解鎖終極大招：AI 直接模擬人眼看著您的螢幕，點擊滑鼠、敲擊鍵盤，像個真人在您的電腦前操作一般，替您下載特定的軟體或網頁數據。</p>
+              </div>
+              <div class="highlight-box" style="margin-bottom:0;">
+                <h4 style="font-size:1.85rem; color: var(--color-primary); margin-bottom: 10px;">⚠️ 電腦端必備設定</h4>
+                <p style="font-size:1.6rem; line-height: 1.6;">若要順利運作排程與 Remote 遙控，請確保：</p>
+                <ul style="margin-left: 20px; font-size: 1.6rem; line-height: 1.6; margin-top: 4px;">
+                  <li>電腦需保持開機，且 Claude Desktop App 於背景運作。</li>
+                  <li>在設定中開啟「Keep Awake (保持喚醒)」。</li>
+                  <li>在 Capabilities 頁面中開啟對應的寫入與連網權限。</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 24: Interactive Case Studies for Students -->
+      <section class="slide">
+        <div class="slide-content-card">
+          <img src="logo.jpg" alt="Logo" class="slide-logo" onerror="this.style.display='none'">
+          <div class="slide-title-group">
+            <span class="slide-tag">STUDENT PRACTICE SHOWCASE</span>
+            <h2 class="slide-title">實戰模仿秀：<span class="highlight">現場學員點餐案例與操作流程</span></h2>
+          </div>
+          <div class="slide-body">
+            <div class="student-case-widget">
+              <div class="tabs-header">
+                <button class="student-tab-btn active" data-tab="st-hr">人資招募</button>
+                <button class="student-tab-btn" data-tab="st-sales">業務績效管理</button>
+                <button class="student-tab-btn" data-tab="st-geo">網路行銷GEO分析</button>
+                <button class="student-tab-btn" data-tab="st-invest">投資標的自動追蹤</button>
+              </div>
+
+              <!-- HR Case -->
+              <div class="student-tab-pane active" id="st-hr">
+                <div class="case-grid quiz-reveal-content">
+                  <div class="case-details">
+                    <span class="case-tagline">👥 人資招募自動化流程 (No-code / Low-code)</span>
+                    <p><strong>挑戰：</strong> 履歷過多，每份手動篩選耗時，且撰寫面試邀約信格式重複度高。</p>
+                    <ul class="case-list">
+                      <li><strong>步驟一：</strong> 在本地建一個 `resumes/` 資料夾，把所有 PDF/Word 履歷丟進去。</li>
+                      <li><strong>步驟二：</strong> 建立 `JD.txt` 寫入評分條件（學歷、工作年資、關鍵技能）。</li>
+                      <li><strong>步驟三：</strong> 執行 Cowork 自動比對並產生評分報告與邀約信草稿。</li>
+                    </ul>
+                  </div>
+                  <div class="case-command-box">
+                    <div class="case-command-title">模仿實作 Prompt</div>
+                    <div class="case-command-content">
+                      "扮演行政人資顧問。讀取 resumes/ 的履歷，比對 JD.txt 條件。請為每人評分並寫出核心優缺點，整理成 outputs/評分表.xlsx。另外，請為 4分以上的候選人，以 Gmail 連接器起草邀約信存為草稿。"
+                    </div>
+                  </div>
+                </div>
+                <div class="quiz-container" style="margin-top: 20px; padding: 20px;">
+                  <div class="quiz-question" style="font-size: 1.3rem; margin-bottom: 12px;">【互動問答】在此案例中，學員需要自己動手寫 Python 程式碼來處理 Excel 報表產出嗎？</div>
+                  <div class="quiz-options" style="gap: 10px;">
+                    <div class="quiz-option" style="padding: 10px 20px; font-size: 1.2rem;" data-correct="false">A. 需要，學員必須先學會編寫 Python 的 pandas 等大數據分析套件</div>
+                    <div class="quiz-option" style="padding: 10px 20px; font-size: 1.2rem;" data-correct="true">B. 不需要！Claude 桌面版 (Run Code 功能) 會在背景自動編寫並執行程式，學員只需在 Prompt 指明輸出格式與欄位即可</div>
+                    <div class="quiz-option" style="padding: 10px 20px; font-size: 1.2rem;" data-correct="false">C. 需要，並且必須在電腦中事先手動下載並設定好特定的資料庫</div>
+                  </div>
+                  <div class="quiz-explanation" style="font-size: 1.2rem; padding: 12px 20px; margin-top: 12px;"
+                       data-text-correct="答對了！這就是 Low-code / No-code 自動化的精華所在。桌面版 Claude 會自動幫您寫 Python 並生成 Excel 試算表，您只需下達白話指令即可。"
+                       data-text-incorrect="不對喔。學員完全不需動手寫程式，桌面端 Claude 會在背景自動撰寫並執行，請再看一次！">
+                  </div>
+                </div>
+              </div>
+
+              <!-- Sales Case -->
+              <div class="student-tab-pane" id="st-sales">
+                <div class="case-grid quiz-reveal-content">
+                  <div class="case-details">
+                    <span class="case-tagline">📈 業務績效管理與落後警示 (No-code / Low-code)</span>
+                    <p><strong>挑戰：</strong> 主管無法即時追蹤每位業務的成單率，等月底看財報往往已錯失時機。</p>
+                    <ul class="case-list">
+                      <li><strong>步驟一：</strong> 本地建立 `sales_data/` 資料夾，每日放入業務銷售記錄之 CSV 檔。</li>
+                      <li><strong>步驟二：</strong> 設定 Global Instructions，表明業績落後警示標準（如：成單率 &lt; 12%）。</li>
+                      <li><strong>步驟三：</strong> 啟動 Cowork 批量讀取，自動找出落後項目，並為主管撰寫輔導信草稿。</li>
+                    </ul>
+                  </div>
+                  <div class="case-command-box">
+                    <div class="case-command-title">模仿實作 Prompt</div>
+                    <div class="case-command-content">
+                      "扮演業務拓展顧問。讀取 sales_data/ 資料夾內近一週的銷售明細，計算每位業務的總成單量與平均成單率。若有業務的成單率低於 12%，請幫我列出名單，並為我（業務主管）起草一份績效輔導信件草稿，檔名命名為 outputs/績效輔導建議.docx。"
+                    </div>
+                  </div>
+                </div>
+                <div class="quiz-container" style="margin-top: 20px; padding: 20px;">
+                  <div class="quiz-question" style="font-size: 1.3rem; margin-bottom: 12px;">【互動問答】在業務績效分析中，如何確保 AI 篩選『成單率低於 12%』時，計算公式與結果百分之百精準？</div>
+                  <div class="quiz-options" style="gap: 10px;">
+                    <div class="quiz-option" style="padding: 10px 20px; font-size: 1.2rem;" data-correct="true">A. 在 Prompt 或 `CLAUDE.md` 中給予明確的公式定義（例：成單率 = 成單量 / 總通話數）並指明數值標準</div>
+                    <div class="quiz-option" style="padding: 10px 20px; font-size: 1.2rem;" data-correct="false">B. 相信 AI 自身的直覺分析，不需要額外給定計算公式</div>
+                    <div class="quiz-option" style="padding: 10px 20px; font-size: 1.2rem;" data-correct="false">C. 必須先用試算表手動計算出結果後，再貼給 AI 核對</div>
+                  </div>
+                  <div class="quiz-explanation" style="font-size: 1.2rem; padding: 12px 20px; margin-top: 12px;"
+                       data-text-correct="答對了！AI 的計算精確度來自於明確的邏輯定義。將公式與篩選門檻明文寫在 Prompt 中，是保障結果不偏離的最佳實務做法。"
+                       data-text-incorrect="不對喔。AI 沒有直覺，它是邏輯推理工具。如果不給定明確的公式，AI 計算出的比例可能會因為欄位定義混淆而出錯。">
+                  </div>
+                </div>
+              </div>
+
+              <!-- GEO Marketing Case -->
+              <div class="student-tab-pane" id="st-geo">
+                <div class="case-grid quiz-reveal-content">
+                  <div class="case-details">
+                    <span class="case-tagline">📍 網路行銷區域 (GEO) 成效分析 (No-code / Low-code)</span>
+                    <p><strong>挑戰：</strong> 各分店的 Google Maps 網路評論眾多且分散，難以跨地域比對並鎖定客訴店點。</p>
+                    <ul class="case-list">
+                      <li><strong>步驟一：</strong> 使用免程式碼網頁爬蟲工具，下載指定地區之分店 Google Maps 評價為 CSV 檔。</li>
+                      <li><strong>步驟二：</strong> 將 CSV 檔案放入本地資料夾，讓 Cowork 自動讀取並依地理區域 (GEO) 分類。</li>
+                      <li><strong>步驟三：</strong> 統計出平均星等與前三名客訴負面關鍵字（如：服務慢），自動輸出 Markdown 報告。</li>
+                    </ul>
+                  </div>
+                  <div class="case-command-box">
+                    <div class="case-command-title">模仿實作 Prompt</div>
+                    <div class="case-command-content">
+                      "扮演行銷分析師。讀取資料夾內的 google_reviews.csv 評價資料，依據地理區域 (GEO) 欄位，計算各區店點的平均評分，並標示出評分低於 4.0 的店點。為這些低分店點歸納前三名的客訴負面關鍵字，並以 Markdown 格式表格輸出，存成 outputs/GEO分析.md。"
+                    </div>
+                  </div>
+                </div>
+                <div class="quiz-container" style="margin-top: 20px; padding: 20px;">
+                  <div class="quiz-question" style="font-size: 1.3rem; margin-bottom: 12px;">【互動問答】在網路行銷案例中，作為非程式人員的行銷人員，如何快速取得競爭對手或自家店點的評論 CSV 資料？</div>
+                  <div class="quiz-options" style="gap: 10px;">
+                    <div class="quiz-option" style="padding: 10px 20px; font-size: 1.2rem;" data-correct="false">A. 必須人工手動逐頁複製貼上至 Excel，沒有其他便捷的非程式管道</div>
+                    <div class="quiz-option" style="padding: 10px 20px; font-size: 1.2rem;" data-correct="false">B. 只能向 Google 官方申請付費的 API 存取權限</div>
+                    <div class="quiz-option" style="padding: 10px 20px; font-size: 1.2rem;" data-correct="true">C. 使用 Apify、Web Scraper 等無程式碼 (No-code) 爬蟲工具，一鍵即可抓取整店 Google 評價並匯出 CSV</div>
+                  </div>
+                  <div class="quiz-explanation" style="font-size: 1.2rem; padding: 12px 20px; margin-top: 12px;"
+                       data-text-correct="完全正確！無程式碼爬蟲工具能在短短幾分鐘內取得海量網頁或社群評價，完美解決非工程人員的資料蒐集痛點，再交給 Cowork 分析效率最高。"
+                       data-text-incorrect="不對喔。手動複製上千筆評論是不可能的。利用無程式碼爬蟲工具，可以輕鬆一鍵下載乾淨的 CSV 資料。">
+                  </div>
+                </div>
+              </div>
+
+              <!-- Investment Target Case -->
+              <div class="student-tab-pane" id="st-invest">
+                <div class="case-grid quiz-reveal-content">
+                  <div class="case-details">
+                    <span class="case-tagline">🔔 標的自動追蹤與異常事件回報 (No-code / Low-code)</span>
+                    <p><strong>挑戰：</strong> 投資人、主管每天要盯許多特定標的與能源法規，但耗費過多精力主動搜集。</p>
+                    <ul class="case-list">
+                      <li><strong>步驟一：</strong> 在本地建立 `watchlist.txt`，寫入想監控的標的（例如：特定綠能股、油價、碳權指數）。</li>
+                      <li><strong>步驟二：</strong> 利用 Cowork 設定一個每日排程任務 (Daily Scheduled Task) 於下午 4:30 觸發。</li>
+                      <li><strong>步驟三：</strong> AI 於該時間自動上網搜尋這些標的最新價格與新聞，發現異常即寄信回報。</li>
+                    </ul>
+                  </div>
+                  <div class="case-command-box">
+                    <div class="case-command-title">模仿實作 Prompt</div>
+                    <div class="case-command-content">
+                      "扮演市場研究助手。讀取本地 watchlist.txt 中的監控標的，上網搜尋他們過去 24 小時內發布的最新重要財經新聞、油價走勢或重大法規。如果發現有『漲跌幅大於 5%』或『重大監管法規修改』等高風險事件，請幫我寫一封分析警示信，使用 Gmail 連接器寄到我的信箱。"
+                    </div>
+                  </div>
+                </div>
+                <div class="quiz-container" style="margin-top: 20px; padding: 20px;">
+                  <div class="quiz-question" style="font-size: 1.3rem; margin-bottom: 12px;">【互動問答】如何讓這個標的自動追蹤在您出門在外、電腦關機時也能順利運作？</div>
+                  <div class="quiz-options" style="gap: 10px;">
+                    <div class="quiz-option" style="padding: 10px 20px; font-size: 1.2rem;" data-correct="false">A. 只要設定了排程任務，即使電腦關機、App 關閉，也依然會自動運作</div>
+                    <div class="quiz-option" style="padding: 10px 20px; font-size: 1.2rem;" data-correct="true">B. 本地排程依賴電腦開機且 App 背景執行。長期若要 24 小時運作，建議將此 AI 任務（MCP/Skill）部署至地端伺服器或企業雲端環境</div>
+                    <div class="quiz-option" style="padding: 10px 20px; font-size: 1.2rem;" data-correct="false">C. 必須保持手機上的 Claude App 處於前景狀態並持續連網</div>
+                  </div>
+                  <div class="quiz-explanation" style="font-size: 1.2rem; padding: 12px 20px; margin-top: 12px;"
+                       data-text-correct="答對了！本地排程依賴您的電腦維持開機與 App 背景運行。如果是企業長期的核心自動化流程，將 AI 任務部署至企業地端伺服器或雲端環境是更穩定、更專業的方案。"
+                       data-text-incorrect="不對喔。本地排程的執行前提是電腦必須維持開機且 App 在背景執行。關機後本地程式是無法運作的。">
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 25: Action Item & Landing -->
+      <section class="slide">
+        <div class="slide-content-card">
+          <img src="logo.jpg" alt="Logo" class="slide-logo" onerror="this.style.display='none'">
+          <div class="slide-title-group">
+            <span class="slide-tag">NEXT ACTIONS</span>
+            <h2 class="slide-title">回去後的第一個任務：<span class="highlight">課後行動指南</span></h2>
+          </div>
+          <div class="slide-body grid-2">
+            <div>
+              <p style="font-size:1.6rem; line-height:1.6;">學習 AI 最忌諱「只看不做」。回去後，請依序完成以下三件事，在一週之內，您就能明顯感受到工作時間被釋放：</p>
+              <div style="display:flex; flex-direction:column; gap:12px; margin-top:20px;">
+                <div class="feature-card" style="padding:15px; display:flex; gap:12px; align-items:flex-start;">
+                  <span class="material-icons" style="color:var(--color-primary); font-size:1.8rem;">download</span>
+                  <div>
+                    <h4 style="color:var(--color-primary); font-size:1.85rem;">Step 1. 下載並升級桌面 App</h4>
+                    <p style="font-size:1.6rem; line-height: 1.5; margin-top:2px;">前往 claude.ai/download 安裝。升級 Pro 或 Team 版，解鎖資料夾讀寫與排程功能。</p>
+                  </div>
+                </div>
+                <div class="feature-card" style="padding:15px; display:flex; gap:12px; align-items:flex-start;">
+                  <span class="material-icons" style="color:var(--color-primary); font-size:1.8rem;">folder</span>
+                  <div>
+                    <h4 style="color:var(--color-primary); font-size:1.85rem;">Step 2. 建立您的第一個工作目錄與 CLAUDE.md</h4>
+                    <p style="font-size:1.6rem; line-height: 1.5; margin-top:2px;">找出您本月重複做了 3 次以上的任務（例如週報、競品整理）。建一個專屬資料夾，放入 CLAUDE.md 寫明 SOP。</p>
+                  </div>
+                </div>
+                <div class="feature-card" style="padding:15px; display:flex; gap:12px; align-items:flex-start;">
+                  <span class="material-icons" style="color:var(--color-primary); font-size:1.8rem;">auto_mode</span>
+                  <div>
+                    <h4 style="color:var(--color-primary); font-size:1.85rem;">Step 3. 設定一個排程任務</h4>
+                    <p style="font-size:1.6rem; line-height: 1.5; margin-top:2px;">設定「每週一早上」或「每日傍晚」，讓 AI 主動讀取您當天的信箱與資料夾，產出工作進度大綱。</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div style="display:flex; flex-direction:column; justify-content:center;">
+              <div class="highlight-box accent" style="text-align:center; padding:30px;">
+                <span class="material-icons" style="font-size:3rem; color:var(--color-primary); margin-bottom:12px;">military_tech</span>
+                <h4 style="font-size:1.85rem; margin-bottom:10px; color:var(--color-primary);">企業長遠佈局藍圖</h4>
+                <p style="font-size:1.6rem; line-height:1.7; text-align:left;">
+                  當團隊成員都有了專屬的 Skills 之後，下一步即可透過<strong>企業版專案共享空間 (Projects sharing)</strong> 將優化好的工作 SOP 分享給全公司。這就如同建立了一個會隨時自我升級、跨部門流通的<strong>智慧內部知識庫 (KM 系統)</strong>，帶領公司一起高效率成長。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 26: Ending -->
+      <section class="slide slide-cover">
+        <div class="slide-content-card" style="background: radial-gradient(circle at center, rgba(10, 30, 63, 0.02) 0%, #ffffff 80%);">
+          <img src="logo.jpg" alt="Logo" class="cover-logo" onerror="this.style.display='none'">
+          <span class="slide-tag">COURSE COMPLETION</span>
+          <h1 class="main-title" style="font-size: 4.5rem; margin-bottom: 15px; color: var(--color-primary);">Thank you!</h1>
+          <p class="sub-title" style="font-size: 1.5rem; color: var(--color-text-sub);">讓 AI 真正為您工作，解鎖極致生產力！</p>
+          <div class="highlight-box" style="max-width: 600px; margin: 0 auto 30px auto; text-align: left; background:#f8fafc; border-left-color:var(--color-accent);">
+            <p style="text-align:center; font-weight:700; color:var(--color-primary); font-size:1.25rem;">講師：王玉玲 (2026.07.02)</p>
+            <p style="font-size:1.1rem; margin-top:8px; text-align:center; color:var(--color-text-sub);">
+              請開啟您的電腦桌面版 Claude Cowork，依照今日的模仿秀案例，親手配置屬於您的第一個自動化專案。
+            </p>
+          </div>
+          <p style="font-size: 0.95rem; color: var(--color-text-sub);">期待在下一次的進階協作課程中，聽見各位帶來的自動化效率成果分享！</p>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Bottom Controls Navigation -->
+    <footer class="bottom-controls">
+      <div class="control-tips">
+        <span>控制提示: <span class="key-cap">◀</span> / <span class="key-cap">▶</span> 或 <span class="key-cap">Space</span> 切換投影片</span>
+      </div>
+      <div class="navigation-buttons">
+        <button class="btn-secondary" id="prev-btn">
+          <span>➔</span> 上一步
+        </button>
+        <button class="btn-primary" id="next-btn">
+          下一步 <span>➔</span>
+        </button>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Toast Notifications -->
+  <div class="toast" id="toast">Prompt 已複製到剪貼簿！</div>
+
+  <script src="script.js"></script>
+</body>
+</html>

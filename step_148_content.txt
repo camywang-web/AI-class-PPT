@@ -1,0 +1,61 @@
+Created At: 2026-06-07T03:48:24Z
+Completed At: 2026-06-07T03:48:24Z
+The following changes were made by the multi_replace_file_content tool to: c:\Users\camyw\Downloads\Antigravity\index.html. If relevant, proactively run terminal commands to execute this code for the USER. Don't ask for permission.
+[diff_block_start]
+@@ -273,32 +273,40 @@
+             <span class="slide-tag">SETTINGS OVERVIEW</span>
+             <h2 class="slide-title">Settings 一次搞懂：<span class="highlight">你需要設定哪些？</span></h2>
+           </div>
+-          <div class="slide-body grid-3">
+-            <div class="feature-card">
+-              <h3>💳 帳號與費用 (Account)</h3>
+-              <ul>
+-                <li><strong>Account:</strong> 管理登入帳號與個人資料。</li>
+-                <li><strong>Billing:</strong> 確認訂閱方案、付款方式、發票 (必設)。</li>
+-                <li><strong>Usage:</strong> 查看每月用量紀錄，不可在此修改 (僅查看)。</li>
+-                <li><strong>Privacy:</strong> 開啟 Memory 對話記憶 + Search chats，讓 Claude 記住你 (必設)。</li>
+-              </ul>
+-            </div>
+-            <div class="feature-card">
+-              <h3>🔌 功能與連接 (Capabilities)</h3>
+-              <ul>
+-                <li><strong>Capabilities:</strong> 開關網路搜尋、執行程式、讀寫檔案 (必設)。</li>
+-                <li><strong>Connectors:</strong> 連接 Gmail、Drive、Notion、Slack (變身萬能助手的關鍵)。</li>
+-                <li><strong>Claude Code:</strong> 程式執行與 Terminal 相關權限 (進階)。</li>
+-                <li><strong>Claude in Chrome:</strong> 讓 Claude 直接在瀏覽器中操作網頁 (進階)。</li>
+-              </ul>
+-            </div>
+-            <div class="feature-card">
+-              <h3>⚙️ Cowork 設定 (最重要)</h3>
+-              <ul>
+-                <li><strong>Global Instructions:</strong> 給所有 Cowork 任務的自動載入工作規則手冊 (核心
+<truncated 45284 bytes>
+自動化簡報製作：</p>
++              <div class="highlight-box" style="margin-top:16px;">
+                 <h4>🖥️ 操作步驟：</h4>
+-                <ol style="margin-left: 20px; font-size: 1.1rem; line-height: 1.6;">
+-                  <li style="margin-bottom:8px;">給定您想追蹤研究的競品公司或市場主題。</li>
+-                  <li style="margin-bottom:8px;">AI 自動使用 Capabilities 中的網路搜尋，抓取最新動態。</li>
+-                  <li style="margin-bottom:8px;">自動撰寫 10 頁的簡報架構與每頁細節。</li>
+-                  <li style="margin-bottom:8px;">調用本機 Python 套件，直接輸出可開啟編輯的 <strong>.pptx</strong> 簡報檔。</li>
+-                </ol>
+-              </div>
+-            </div>
+-            <div>
+-              <div class="feature-card">
+-                <h3>💡 實務指令：</h3>
+-                <div class="code-container" style="margin-top:10px; padding:12px;">
+-                  <code style="color:var(--color-accent);">"上網搜尋三個最新的 AI 協作工具競品，分析他們的定價與核心功能優缺點，並以此製作一份 8 頁的分析簡報，存為 outputs/競品分析簡報.pptx"</code>
++                <ol style="margin-left: 20px; font-size: 1.1rem; line-height: 1.5;">
++                  <li style="margin-bottom:6px;">給定想研究的競品主題或市場法規。</li>
++                  <li style="margin-bottom:6px;">AI 呼叫網路搜尋即時抓取最新同業定價與規格。</li>
++                  <li style="margin-bottom:6px;">AI 編寫大綱並在本機直接輸出可編輯的 <strong>.pptx</strong> 簡報。</li>
++                </ol>
++              </div>
++            </div>
++            <div>
++              <div class="feature-card" style="padding: 16px; margin-bottom: 16px;">
++                <h3 style=
+<truncated 20459 bytes>
+
+NOTE: The output was truncated because it was too long. Use a more targeted query or a smaller range to get the information you need.
