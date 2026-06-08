@@ -5,7 +5,1243 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Claude Chat & Cowork 雙效核心實戰：2小時從個人效率到企業安全落地</title>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <style>
+/* CSS Stylesheet for Claude Course Interactive Presentation - Corporate Navy & Gold Theme */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  --bg-main: #F4F6F9; /* Clean Light Gray */
+  --bg-card: #FFFFFF; /* Pure White */
+  --bg-sidebar: #0A1E3F; /* Corporate Deep Navy */
+  --color-primary: #0A1E3F; /* Deep Navy Blue */
+  --color-secondary: #1B3B6F; /* Royal Navy */
+  --color-accent: #E29500; /* Rich Warm Gold (adjusted for light contrast) */
+  --color-accent-bg: rgba(226, 149, 0, 0.1);
+  --color-text-main: #1F2937; /* Dark Slate */
+  --color-text-sub: #4B5563; /* Muted Slate */
+  --color-text-light: #F3F4F6;
+  --font-title: 'Outfit', 'Inter', -apple-system, sans-serif;
+  --font-body: 'Inter', -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --border-glass: 1px solid rgba(10, 30, 63, 0.08);
+  --border-dark: 1px solid rgba(255, 255, 255, 0.1);
+  --shadow-primary: 0 10px 30px rgba(10, 30, 63, 0.06);
+  --shadow-accent: 0 4px 15px rgba(226, 149, 0, 0.15);
+  --transition-speed: 0.3s;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--color-text-main);
+  font-family: var(--font-body);
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(10, 30, 63, 0.02);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(10, 30, 63, 0.15);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent);
+}
+
+/* Sidebar Styling - Remains dark navy for elegant layout division */
+aside.sidebar {
+  width: 280px;
+  background-color: var(--bg-sidebar);
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: transform 0.3s ease, width 0.3s ease;
+  z-index: 100;
+  flex-shrink: 0;
+}
+
+aside.sidebar.collapsed {
+  width: 0;
+  transform: translateX(-280px);
+  border-right: none;
+}
+
+.sidebar-header {
+  padding: 24px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sidebar-header img {
+  height: 36px;
+  width: auto;
+  border-radius: 4px;
+  object-fit: contain;
+  background: #ffffff;
+  padding: 2px;
+}
+
+.sidebar-header h1 {
+  font-family: var(--font-title);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.sidebar-menu {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 20px 12px;
+}
+
+.menu-section-title {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 0.1em;
+  margin: 16px 8px 8px 8px;
+  font-weight: 600;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.7);
+  transition: all 0.2s ease;
+  gap: 10px;
+  text-decoration: none;
+  margin-bottom: 4px;
+  border: 1px solid transparent;
+}
+
+.menu-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+}
+
+.menu-item.active {
+  background: rgba(226, 149, 0, 0.15);
+  color: #ffffff;
+  font-weight: 600;
+  border-left: 3px solid var(--color-accent);
+}
+
+.sidebar-footer {
+  padding: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.4);
+  text-align: center;
+}
+
+/* Main Content Styling */
+main.presentation-container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Progress bar at the top */
+.progress-bar-container {
+  height: 6px;
+  width: 100%;
+  background-color: rgba(10, 30, 63, 0.05);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+  width: 0%;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Header bar */
+.top-header {
+  height: 60px;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: var(--border-glass);
+  background: #ffffff;
+  z-index: 9;
+}
+
+.top-header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.header-logo {
+  height: 28px;
+  width: auto;
+  border-radius: 4px;
+  object-fit: contain;
+}
+
+.btn-icon {
+  background: none;
+  border: none;
+  color: var(--color-text-main);
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-icon:hover {
+  background: rgba(10, 30, 63, 0.05);
+  color: var(--color-accent);
+}
+
+.course-title-top {
+  font-family: var(--font-title);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.top-header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.slide-counter {
+  font-size: 0.85rem;
+  color: var(--color-primary);
+  font-weight: 700;
+  font-family: var(--font-mono);
+  background: rgba(10, 30, 63, 0.05);
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+/* Slide Deck Styling */
+.slides-viewport {
+  flex-grow: 1;
+  position: relative;
+  overflow: hidden;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  right: 30px;
+  bottom: 30px;
+  opacity: 0;
+  transform: scale(0.98) translateY(10px);
+  transition: opacity var(--transition-speed) ease, transform var(--transition-speed) cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 1;
+}
+
+.slide.active {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  pointer-events: auto;
+  z-index: 5;
+}
+
+/* Slide components - Extra large layout for projector screens */
+.slide-content-card {
+  background: var(--bg-card);
+  border: var(--border-glass);
+  border-radius: 16px;
+  padding: 48px 64px;
+  height: 100%;
+  width: 100%;
+  max-width: 1400px; /* Stretched for large projector visibility */
+  margin: 0 auto;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 40px rgba(10, 30, 63, 0.05);
+  position: relative;
+}
+
+/* Slide Logo in Content Card */
+.slide-logo {
+  position: absolute;
+  top: 24px;
+  left: 64px;
+  height: 24px;
+  width: auto;
+  object-fit: contain;
+  opacity: 0.9;
+}
+
+.slide-title-group {
+  margin-bottom: 24px;
+  margin-top: 15px; /* Leave space for slide logo */
+  border-bottom: 2px solid rgba(10, 30, 63, 0.04);
+  padding-bottom: 16px;
+}
+
+.slide-tag {
+  font-size: 1.1rem; /* Scaled up for projection */
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-accent);
+  font-weight: 700;
+  margin-bottom: 6px;
+  display: inline-block;
+}
+
+.slide-title {
+  font-family: var(--font-title);
+  font-size: 3.4rem; /* Scaled up for projection */
+  font-weight: 800;
+  color: var(--color-primary);
+  line-height: 1.25;
+}
+
+.slide-title span.highlight {
+  color: var(--color-accent);
+}
+
+.slide-body {
+  flex-grow: 1;
+  font-size: 1.55rem; /* Scaled up for projection */
+  line-height: 1.7;
+  color: var(--color-text-main);
+}
+
+/* Cover Slide layout */
+.slide-cover {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.slide-cover .slide-content-card {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: radial-gradient(circle at center, rgba(10, 30, 63, 0.02) 0%, #ffffff 80%);
+  border: var(--border-glass);
+}
+
+.slide-cover img.cover-logo {
+  height: 70px;
+  width: auto;
+  margin-bottom: 24px;
+  object-fit: contain;
+}
+
+.slide-cover h1.main-title {
+  font-family: var(--font-title);
+  font-size: 4.4rem; /* Scaled up for projection */
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  color: var(--color-primary);
+}
+
+.slide-cover p.sub-title {
+  font-size: 1.85rem; /* Scaled up for projection */
+  color: var(--color-text-sub);
+  margin-bottom: 40px;
+  max-width: 1100px;
+  line-height: 1.6;
+}
+
+.slide-cover .meta-info {
+  display: flex;
+  gap: 36px;
+  font-size: 1.35rem; /* Scaled up for projection */
+  color: var(--color-text-main);
+  border-top: var(--border-glass);
+  padding-top: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.meta-item strong {
+  color: var(--color-accent);
+}
+
+/* Controls at bottom */
+.bottom-controls {
+  height: 70px;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: var(--border-glass);
+  background: #ffffff;
+  z-index: 9;
+}
+
+.control-tips {
+  font-size: 0.85rem;
+  color: var(--color-text-sub);
+  display: flex;
+  gap: 16px;
+}
+
+.key-cap {
+  background: #f3f4f6;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  padding: 2px 8px;
+  font-family: var(--font-mono);
+  color: var(--color-text-main);
+  font-size: 0.75rem;
+  box-shadow: 0 1px 0 #d1d5db;
+}
+
+.navigation-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.btn-primary, .btn-secondary {
+  font-family: var(--font-title);
+  font-size: 1.15rem; /* Scaled up for projection */
+  font-weight: 700;
+  padding: 12px 28px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s;
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: #ffffff;
+  border: none;
+  box-shadow: 0 4px 10px rgba(10, 30, 63, 0.15);
+}
+
+.btn-primary:hover {
+  background: var(--color-secondary);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: #ffffff;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+}
+
+.btn-secondary:hover {
+  background: rgba(10, 30, 63, 0.03);
+  transform: translateY(-1px);
+}
+
+/* Grids and Cards Layout */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  height: 100%;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.feature-card {
+  background: #f8fafc;
+  border: var(--border-glass);
+  border-radius: 12px;
+  padding: 32px;
+  transition: all 0.2s ease;
+}
+
+.feature-card:hover {
+  background: #f1f5f9;
+  border-color: var(--color-accent);
+  transform: translateY(-2px);
+}
+
+.feature-card h3 {
+  font-family: var(--font-title);
+  color: var(--color-primary);
+  margin-bottom: 12px;
+  font-size: 1.85rem; /* Scaled up for projection */
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.feature-card h3 i {
+  color: var(--color-accent);
+}
+
+.feature-card p {
+  font-size: 1.45rem; /* Scaled up for projection */
+  color: var(--color-text-sub);
+}
+
+.feature-card ul {
+  list-style-type: none;
+  margin-top: 14px;
+}
+
+.feature-card ul li {
+  margin-bottom: 8px;
+  font-size: 1.4rem; /* Scaled up for projection */
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.feature-card ul li::before {
+  content: "■";
+  color: var(--color-accent);
+  font-size: 0.75rem;
+  margin-top: 8px;
+}
+
+/* Highlight boxes */
+.highlight-box {
+  background: #f0fdfa;
+  border-left: 5px solid #0d9488;
+  border-radius: 0 12px 12px 0;
+  padding: 24px 28px;
+  margin-bottom: 24px;
+}
+
+.highlight-box.accent {
+  background: #fefbeb;
+  border-left-color: var(--color-accent);
+}
+
+.highlight-box h4 {
+  font-family: var(--font-title);
+  color: var(--color-primary);
+  font-size: 1.7rem; /* Scaled up for projection */
+  margin-bottom: 8px;
+}
+
+.highlight-box p {
+  font-size: 1.45rem; /* Scaled up for projection */
+  color: var(--color-text-main);
+}
+
+/* Timeline Layout */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 10px 0;
+}
+
+.timeline-item {
+  display: flex;
+  gap: 24px;
+}
+
+.timeline-time {
+  width: 120px;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: var(--color-accent);
+  font-size: 1.4rem; /* Scaled up for projection */
+  text-align: right;
+  flex-shrink: 0;
+  padding-top: 2px;
+}
+
+.timeline-marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.timeline-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--color-primary);
+}
+
+.timeline-line {
+  width: 2px;
+  flex-grow: 1;
+  background: rgba(10, 30, 63, 0.1);
+  margin-top: 8px;
+}
+
+.timeline-content {
+  padding-bottom: 16px;
+}
+
+.timeline-content h4 {
+  font-family: var(--font-title);
+  color: var(--color-primary);
+  font-size: 1.7rem; /* Scaled up for projection */
+  margin-bottom: 6px;
+}
+
+.timeline-content p {
+  font-size: 1.45rem; /* Scaled up for projection */
+  color: var(--color-text-sub);
+}
+
+/* Code Container style */
+.code-container {
+  background: #0f172a; /* Slate 900 for code readability */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  font-family: var(--font-mono);
+  font-size: 1.25rem; /* Scaled up for projection */
+  padding: 24px;
+  overflow-x: auto;
+  position: relative;
+  margin: 16px 0;
+}
+
+.code-header {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 0.05em;
+}
+
+.code-container pre {
+  margin: 0;
+  color: #e2e8f0;
+}
+
+.code-container code {
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+/* Interactive Prompt Builder Widget */
+.prompt-builder {
+  display: grid;
+  grid-template-columns: 360px 1fr; /* Enlarged side panel */
+  gap: 32px;
+  margin-top: 10px;
+  height: 100%;
+}
+
+.builder-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+.builder-group {
+  background: #f8fafc;
+  border: var(--border-glass);
+  padding: 18px;
+  border-radius: 12px;
+}
+
+.builder-label {
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-primary);
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.builder-select {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  color: var(--color-text-main);
+  padding: 12px;
+  font-size: 1.1rem; /* Scaled up for projection */
+  outline: none;
+  cursor: pointer;
+}
+
+.builder-select option {
+  background: #ffffff;
+  color: var(--color-text-main);
+}
+
+.builder-output {
+  display: flex;
+  flex-direction: column;
+  background: #0f172a;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  padding: 28px;
+  height: 480px; /* Taller widget height */
+  position: relative;
+}
+
+.builder-output textarea {
+  flex-grow: 1;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-family: var(--font-mono);
+  font-size: 1.25rem; /* Scaled up for projection */
+  resize: none;
+  outline: none;
+  line-height: 1.6;
+}
+
+.builder-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Interactive Security Checklist Widget */
+.security-checklist-widget {
+  background: #f8fafc;
+  border: var(--border-glass);
+  border-radius: 16px;
+  padding: 32px;
+}
+
+.checklist-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  border-bottom: 2px solid rgba(10, 30, 63, 0.04);
+  padding-bottom: 16px;
+}
+
+.checklist-title {
+  font-family: var(--font-title);
+  font-size: 1.85rem; /* Scaled up for projection */
+  font-weight: 800;
+  color: var(--color-primary);
+}
+
+.checklist-score {
+  font-family: var(--font-mono);
+  font-size: 1.3rem;
+  background: rgba(10, 30, 63, 0.05);
+  color: var(--color-primary);
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-weight: 700;
+}
+
+.checklist-items {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.checklist-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  cursor: pointer;
+  padding: 16px;
+  border-radius: 10px;
+  transition: background 0.2s;
+  background: #ffffff;
+  border: var(--border-glass);
+}
+
+.checklist-item:hover {
+  background: #f1f5f9;
+}
+
+.checklist-checkbox {
+  position: relative;
+  width: 26px;
+  height: 26px;
+  border: 2px solid #94a3b8;
+  border-radius: 6px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.checklist-checkbox::after {
+  content: "✓";
+  font-size: 1.15rem;
+  color: #ffffff;
+  font-weight: bold;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: all 0.2s;
+}
+
+.checklist-item.checked .checklist-checkbox {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.checklist-item.checked .checklist-checkbox::after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.checklist-item-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.checklist-item-title {
+  color: var(--color-primary);
+  font-size: 1.85rem; /* Scaled up for projection */
+  font-weight: 700;
+}
+
+.checklist-item-desc {
+  font-size: 1.6rem; /* Scaled up for projection */
+  color: var(--color-text-sub);
+  margin-top: 4px;
+  line-height: 1.5;
+}
+
+.security-badge {
+  display: inline-block;
+  font-size: 0.85rem;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-weight: 700;
+  margin-top: 6px;
+  align-self: flex-start;
+}
+
+.security-badge.secure {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.security-badge.warning {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+/* Dynamic Case Study Tab layout */
+.case-study-widget {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 100%;
+}
+
+.tabs-header {
+  display: flex;
+  gap: 12px;
+  border-bottom: 2px solid rgba(10, 30, 63, 0.04);
+  padding-bottom: 12px;
+}
+
+.tab-btn, .student-tab-btn {
+  background: #ffffff;
+  border: 2px solid #cbd5e1;
+  color: var(--color-text-sub);
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: var(--font-title);
+  font-size: 1.2rem; /* Scaled up for projection */
+  font-weight: 700;
+  transition: all 0.2s;
+}
+
+.tab-btn:hover, .student-tab-btn:hover {
+  background: #f8fafc;
+  color: var(--color-primary);
+}
+
+.tab-btn.active, .student-tab-btn.active {
+  background: var(--color-primary);
+  color: #ffffff;
+  border-color: var(--color-primary);
+  box-shadow: 0 4px 10px rgba(10, 30, 63, 0.15);
+}
+
+.tab-pane, .student-tab-pane {
+  display: none;
+  animation: fadeIn 0.4s ease;
+}
+
+.tab-pane.active, .student-tab-pane.active {
+  display: block;
+}
+
+.case-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.case-details {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.case-tagline {
+  color: var(--color-accent);
+  font-weight: 800;
+  font-size: 1.7rem; /* Scaled up for projection */
+}
+
+.case-list {
+  list-style: none;
+}
+
+.case-list li {
+  margin-bottom: 12px;
+  font-size: 1.45rem; /* Scaled up for projection */
+  display: flex;
+  gap: 12px;
+}
+
+.case-list li i {
+  color: var(--color-primary);
+  margin-top: 4px;
+}
+
+.case-command-box {
+  background: #0f172a;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  padding: 28px;
+}
+
+.case-command-title {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.case-command-content {
+  font-family: var(--font-mono);
+  font-size: 1.25rem; /* Scaled up for projection */
+  color: #38bdf8; /* Light blue code contrast */
+  line-height: 1.6;
+}
+
+/* Slide 12 Student Case Tabs */
+.student-case-widget {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 100%;
+}
+
+/* Interactive Quiz styling */
+.quiz-container {
+  background: #f8fafc;
+  border: var(--border-glass);
+  border-radius: 12px;
+  padding: 28px;
+  margin: 16px 0;
+}
+
+.quiz-question {
+  font-family: var(--font-title);
+  font-size: 1.6rem; /* Scaled up for projection */
+  font-weight: 800;
+  color: var(--color-primary);
+  margin-bottom: 20px;
+}
+
+.quiz-options {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.quiz-option {
+  background: #ffffff;
+  border: 2px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 16px 24px;
+  cursor: pointer;
+  font-size: 1.35rem; /* Scaled up for projection */
+  font-weight: 700;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.quiz-option:hover {
+  background: #f1f5f9;
+  border-color: var(--color-primary);
+}
+
+.quiz-option.correct {
+  border-color: #10b981;
+  background: #ecfdf5;
+  color: #065f46;
+}
+
+.quiz-option.incorrect {
+  border-color: #ef4444;
+  background: #fef2f2;
+  color: #991b1b;
+}
+
+.quiz-explanation {
+  margin-top: 20px;
+  padding: 20px 24px;
+  border-radius: 8px;
+  background: #ecfdf5;
+  border-left: 6px solid #10b981;
+  font-size: 1.35rem; /* Scaled up for projection */
+  line-height: 1.6;
+  display: none;
+}
+
+.quiz-explanation.show {
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Toast styling */
+.toast {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  background: var(--bg-sidebar);
+  color: #ffffff;
+  border: 1px solid var(--color-accent);
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 700;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.toast.show {
+  transform: translateX(-50%) translateY(0);
+}
+
+/* QA 頁面左側說明內容隱藏與漸顯樣式 */
+.quiz-reveal-content {
+  opacity: 0;
+  visibility: hidden;
+  max-height: 0;
+  overflow: hidden;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  transform: translateY(15px);
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), 
+              max-height 0.5s cubic-bezier(0.16, 1, 0.3, 1), 
+              visibility 0.5s;
+}
+
+/* 當投影片或其容器被標記為已解答時，顯示內容 */
+.slide.quiz-answered .quiz-reveal-content,
+.student-tab-pane.quiz-answered .quiz-reveal-content {
+  opacity: 1;
+  visibility: visible;
+  max-height: 2000px; /* 足夠大的上限 */
+  transform: translateY(0);
+  margin-top: inherit !important;
+  margin-bottom: inherit !important;
+  padding-top: inherit !important;
+  padding-bottom: inherit !important;
+}
+
+/* Slide 1 問卷統計圖表樣式 */
+.chart-container {
+  background: #f8fafc;
+  border: var(--border-glass);
+  border-radius: 12px;
+  padding: 24px;
+  height: 100%;
+}
+
+.chart-title {
+  font-family: var(--font-title);
+  color: var(--color-primary);
+  font-size: 1.6rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.chart-title i {
+  color: var(--color-accent);
+}
+
+.chart-subtitle {
+  font-size: 1.15rem;
+  color: var(--color-text-sub);
+  margin-bottom: 20px;
+}
+
+.bar-chart {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.bar-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.bar-label-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.bar-name {
+  color: var(--color-text-main);
+}
+
+.bar-value {
+  color: var(--color-accent);
+  font-family: var(--font-mono);
+}
+
+.bar-track {
+  height: 10px;
+  background: rgba(10, 30, 63, 0.05);
+  border-radius: 5px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.bar-fill {
+  width: 0;
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+  border-radius: 5px;
+  transition: width 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* 當 Slide 1 啟動時，觸發圖表條動畫 */
+.slide.active .bar-fill-1 { width: 84.2%; }
+.slide.active .bar-fill-2 { width: 36.8%; }
+.slide.active .bar-fill-3 { width: 36.8%; }
+.slide.active .bar-fill-4 { width: 31.6%; }
+.slide.active .bar-fill-5 { width: 31.6%; }
+
+.chart-container-right {
+  background: #f8fafc;
+  border: var(--border-glass);
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.concern-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.donut-card {
+  background: #ffffff;
+  border: var(--border-glass);
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+  transition: transform 0.2s;
+  box-shadow: 0 4px 6px rgba(10, 30, 63, 0.02);
+}
+
+.donut-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-accent);
+}
+
+.donut-number {
+  font-family: var(--font-title);
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #ef4444; /* 紅色警示 */
+  margin-bottom: 6px;
+}
+
+.donut-label {
+  font-size: 1.1rem;
+  color: var(--color-text-main);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+</style>
 </head>
 <body>
 
@@ -29,81 +1265,84 @@
 
       <div class="menu-section-title">設定與基礎 (PDF P5-13)</div>
       <a href="#" class="menu-item" id="menu-slide-3" data-slide-index="3">
-        <span class="material-icons">settings</span> Settings 設定概覽
+        <span class="material-icons">security</span> Anthropic 資安實踐 × Ben Mann
       </a>
       <a href="#" class="menu-item" id="menu-slide-4" data-slide-index="4">
-        <span class="material-icons">check_circle</span> Cowork 初始設定 5 步
+        <span class="material-icons">settings</span> Settings 設定概覽
       </a>
       <a href="#" class="menu-item" id="menu-slide-5" data-slide-index="5">
-        <span class="material-icons">menu_book</span> Cowork 基礎 7 步驟
+        <span class="material-icons">check_circle</span> Cowork 初始設定 5 步
       </a>
       <a href="#" class="menu-item" id="menu-slide-6" data-slide-index="6">
-        <span class="material-icons">download</span> Step 1: 下載安裝 Desktop
+        <span class="material-icons">menu_book</span> Cowork 基礎 7 步驟
       </a>
       <a href="#" class="menu-item" id="menu-slide-7" data-slide-index="7">
-        <span class="material-icons">extension</span> Step 2: 安裝 Chrome 外掛
+        <span class="material-icons">download</span> Step 1: 下載安裝 Desktop
       </a>
       <a href="#" class="menu-item" id="menu-slide-8" data-slide-index="8">
-        <span class="material-icons">article</span> Step 3: 設定 CLAUDE.md
+        <span class="material-icons">extension</span> Step 2: 安裝 Chrome 外掛
       </a>
       <a href="#" class="menu-item" id="menu-slide-9" data-slide-index="9">
-        <span class="material-icons">folder_open</span> Step 4: 選擇工作資料夾
+        <span class="material-icons">article</span> Step 3: 設定 CLAUDE.md
       </a>
       <a href="#" class="menu-item" id="menu-slide-10" data-slide-index="10">
+        <span class="material-icons">folder_open</span> Step 4: 選擇工作資料夾
+      </a>
+      <a href="#" class="menu-item" id="menu-slide-11" data-slide-index="11">
         <span class="material-icons">create_new_folder</span> 專屬工作資料夾範例
       </a>
 
       <div class="menu-section-title">指令與案例 (PDF P14-28)</div>
-      <a href="#" class="menu-item" id="menu-slide-11" data-slide-index="11">
+      <a href="#" class="menu-item" id="menu-slide-12" data-slide-index="12">
         <span class="material-icons">g_translate</span> Global Instructions
       </a>
-      <a href="#" class="menu-item" id="menu-slide-12" data-slide-index="12">
+      <a href="#" class="menu-item" id="menu-slide-13" data-slide-index="13">
         <span class="material-icons">layers</span> Instruction 層級優先度
       </a>
-      <a href="#" class="menu-item" id="menu-slide-13" data-slide-index="13">
+      <a href="#" class="menu-item" id="menu-slide-14" data-slide-index="14">
         <span class="material-icons">psychology</span> 萬用 Prompt 模板
       </a>
-      <a href="#" class="menu-item" id="menu-slide-14" data-slide-index="14">
+      <a href="#" class="menu-item" id="menu-slide-15" data-slide-index="15">
         <span class="material-icons">list_alt</span> Cowork 5大案例總覽
       </a>
-      <a href="#" class="menu-item" id="menu-slide-15" data-slide-index="15">
+      <a href="#" class="menu-item" id="menu-slide-16" data-slide-index="16">
         <span class="material-icons">assignment_turned_in</span> Case 1: 草稿直接存 Word
       </a>
-      <a href="#" class="menu-item" id="menu-slide-16" data-slide-index="16">
+      <a href="#" class="menu-item" id="menu-slide-17" data-slide-index="17">
         <span class="material-icons">table_view</span> Case 2: 批量 PDF 轉 Excel
       </a>
-      <a href="#" class="menu-item" id="menu-slide-17" data-slide-index="17">
+      <a href="#" class="menu-item" id="menu-slide-18" data-slide-index="18">
         <span class="material-icons">slideshow</span> Case 3: 搜尋競品出簡報
       </a>
-      <a href="#" class="menu-item" id="menu-slide-18" data-slide-index="18">
+      <a href="#" class="menu-item" id="menu-slide-19" data-slide-index="19">
         <span class="material-icons">drive_file_rename_outline</span> Case 4: 掃描改名與分類
       </a>
 
       <div class="menu-section-title">實戰互動區</div>
-      <a href="#" class="menu-item" id="menu-slide-19" data-slide-index="19">
+      <a href="#" class="menu-item" id="menu-slide-20" data-slide-index="20">
         <span class="material-icons">playlist_add_check</span> 互動式：AI 安全防護指標
       </a>
-      <a href="#" class="menu-item" id="menu-slide-20" data-slide-index="20">
+      <a href="#" class="menu-item" id="menu-slide-21" data-slide-index="21">
         <span class="material-icons">construction</span> 互動式：萬用 Prompt 組合器
       </a>
-      <a href="#" class="menu-item" id="menu-slide-21" data-slide-index="21">
+      <a href="#" class="menu-item" id="menu-slide-22" data-slide-index="22">
         <span class="material-icons">copy_all</span> 互動式：CLAUDE.md 產生器
       </a>
-      <a href="#" class="menu-item" id="menu-slide-22" data-slide-index="22">
+      <a href="#" class="menu-item" id="menu-slide-23" data-slide-index="23">
         <span class="material-icons">business_center</span> 互動式：多維角色案例拆解
       </a>
-      <a href="#" class="menu-item" id="menu-slide-23" data-slide-index="23">
+      <a href="#" class="menu-item" id="menu-slide-24" data-slide-index="24">
         <span class="material-icons">settings_suggest</span> 進階功能：排程、遙控與遠端
       </a>
-      <a href="#" class="menu-item" id="menu-slide-24" data-slide-index="24">
+      <a href="#" class="menu-item" id="menu-slide-25" data-slide-index="25">
         <span class="material-icons">pan_tool</span> 互動式：現場學員點餐實作
       </a>
-      <a href="#" class="menu-item" id="menu-slide-25" data-slide-index="25">
+      <a href="#" class="menu-item" id="menu-slide-26" data-slide-index="26">
         <span class="material-icons">task_alt</span> 課後行動：你的第一個自動化
       </a>
 
       <div class="menu-section-title">課程結束</div>
-      <a href="#" class="menu-item" id="menu-slide-26" data-slide-index="26">
+      <a href="#" class="menu-item" id="menu-slide-27" data-slide-index="27">
         <span class="material-icons">celebration</span> Thank you!
       </a>
     </div>
@@ -128,7 +1367,7 @@
         <img src="logo.jpg" alt="Logo" class="header-logo" onerror="this.style.display='none'">
       </div>
       <div class="top-header-right" style="display: flex; align-items: center; gap: 16px;">
-        <span class="slide-counter" id="current-slide-counter" style="font-family: var(--font-title); font-weight: 700; font-size: 1.15rem; color: var(--color-text-sub);">1 / 27</span>
+        <span class="slide-counter" id="current-slide-counter" style="font-family: var(--font-title); font-weight: 700; font-size: 1.15rem; color: var(--color-text-sub);">1 / 28</span>
         <button class="btn-icon" id="toggle-fullscreen" title="全螢幕播放 (F11)">
           <span class="material-icons">fullscreen</span>
         </button>
@@ -360,6 +1599,85 @@
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+
+      <!-- Slide 3: Anthropic Security Insights from Ben Mann Fireside Chat -->
+      <section class="slide">
+        <div class="slide-content-card">
+          <img src="logo.jpg" alt="Logo" class="slide-logo" onerror="this.style.display='none'">
+          <div class="slide-title-group">
+            <span class="slide-tag">ANTHROPIC 資安實踐 × Ben Mann 爐邊對談現場筆記</span>
+            <h2 class="slide-title">Anthropic 共同創辦人怎麼說：<span class="highlight">企業資安的四個真相</span></h2>
+          </div>
+          <div class="slide-body" style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+
+            <!-- Card 1: MCP -->
+            <div class="feature-card" style="padding:18px; border-left:4px solid var(--color-primary);">
+              <div style="display:flex; align-items:center; gap:8px; margin-bottom:10px;">
+                <span class="material-icons" style="color:var(--color-primary); font-size:1.6rem;">lock</span>
+                <h4 style="font-size:1.55rem; color:var(--color-primary);">MCP — 顧問進保險庫機制</h4>
+              </div>
+              <p style="font-size:1.35rem; line-height:1.65; color:var(--color-text-sub);">
+                「資料鎖在你公司不外流，Claude 像被請進保險庫的外部顧問，在裡面看完資料、<strong>只把結論帶出來。</strong>」
+              </p>
+              <div style="background:#f0f7ff; border-radius:8px; padding:10px 14px; margin-top:10px; font-size:1.25rem; color:var(--color-text-sub);">
+                🔑 <strong>一句話：</strong>連到最先進模型，又保有資料控制權。資料不用出公司，AI 的能力照樣全開。
+              </div>
+            </div>
+
+            <!-- Card 2: Cross-region inference -->
+            <div class="feature-card" style="padding:18px; border-left:4px solid #1d9e75;">
+              <div style="display:flex; align-items:center; gap:8px; margin-bottom:10px;">
+                <span class="material-icons" style="color:#1d9e75; font-size:1.6rem;">flight_land</span>
+                <h4 style="font-size:1.55rem; color:#1d9e75;">跨區域推論 — 資料留台灣</h4>
+              </div>
+              <p style="font-size:1.35rem; line-height:1.65; color:var(--color-text-sub);">
+                金融業嚴格規範下的解法：<strong>客戶資料存在台灣不動</strong>，只把「問題」寄出去，海外超算把答案寄回來。
+              </p>
+              <div style="background:#f0faf6; border-radius:8px; padding:10px 14px; margin-top:10px; font-size:1.25rem; color:var(--color-text-sub);">
+                🏦 <strong>比喻：</strong>戶口名簿鎖在家 — 只把要算的那道題寄出去問。符合金管會／個資規範，又能用最強推算力。
+              </div>
+            </div>
+
+            <!-- Card 3: Workload Identity Federation -->
+            <div class="feature-card" style="padding:18px; border-left:4px solid #e07b2c;">
+              <div style="display:flex; align-items:center; gap:8px; margin-bottom:10px;">
+                <span class="material-icons" style="color:#e07b2c; font-size:1.6rem;">badge</span>
+                <h4 style="font-size:1.55rem; color:#e07b2c;">工作負載身份聯邦 — 告別 API Key</h4>
+              </div>
+              <p style="font-size:1.35rem; line-height:1.65; color:var(--color-text-sub);">
+                舊方法 = 發實體鑰匙（掉了就完蛋）；Anthropic 推的新方法 = <strong>刷臉進門，沒有鑰匙可以被偷走</strong>。
+              </p>
+              <div style="background:#fff8f0; border-radius:8px; padding:10px 14px; margin-top:10px; font-size:1.25rem; color:var(--color-text-sub);">
+                ⚠️ <strong>如果你公司還在到處貼 API Key — 這就是該升級的訊號。</strong>金鑰外洩是資安事故最常見的破口。
+              </div>
+            </div>
+
+            <!-- Card 4: RSP + Red Team + Delay -->
+            <div class="feature-card" style="padding:18px; border-left:4px solid #c0392b;">
+              <div style="display:flex; align-items:center; gap:8px; margin-bottom:10px;">
+                <span class="material-icons" style="color:#c0392b; font-size:1.6rem;">gpp_maybe</span>
+                <h4 style="font-size:1.55rem; color:#c0392b;">RSP + 紅隊測試 — 延遲發布是一種實力</h4>
+              </div>
+              <p style="font-size:1.35rem; line-height:1.65; color:var(--color-text-sub);">
+                Opus 4 上線前，紅隊測試發現某測試者輔助開發生物武器效率<strong>提升 2.5 倍</strong> → Anthropic 選擇延遲發布，補好防線才推出。
+              </p>
+              <div style="background:#fff0f0; border-radius:8px; padding:10px 14px; margin-top:10px; font-size:1.25rem; color:var(--color-text-sub);">
+                🧪 <strong>不是自己說了算：</strong>英國 AI 安全研究所第三方審核 + 內部基準測試雙重把關。「能不能被拿去做最壞的事」是上市門檻。
+              </div>
+            </div>
+
+          </div>
+
+          <div class="highlight-box" style="margin-top:14px; background:#f0f4ff; border-left:4px solid var(--color-primary); padding:12px 18px;">
+            <p style="font-size:1.35rem; line-height:1.7;">
+              📍 <strong>台灣場合的特殊意涵：</strong>這場對談是「數位發展部 × Anthropic」的政府級對話，Ben 特別以台灣金融業為例說明跨區域推論。
+              意味著 Anthropic 正<strong>積極把這套企業資安框架帶進台灣市場</strong>。你今天學的 Cowork 設定，本質上就是 MCP 機制的實際操作。
+            </p>
+          </div>
+
         </div>
       </section>
 
@@ -1598,6 +2916,442 @@
   <!-- Toast Notifications -->
   <div class="toast" id="toast">Prompt 已複製到剪貼簿！</div>
 
-  <script src="script.js"></script>
+  <script>
+// Interactive Presentation Logic for Claude Chat & Cowork Slides
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Elements
+  const slides = document.querySelectorAll('.slide');
+  const menuItems = document.querySelectorAll('.menu-item');
+  const progressBar = document.querySelector('.progress-bar');
+  const prevBtn = document.getElementById('prev-btn');
+  const nextBtn = document.getElementById('next-btn');
+  const counterSpan = document.getElementById('current-slide-counter');
+  const sidebar = document.getElementById('sidebar');
+  const toggleSidebarBtn = document.getElementById('toggle-sidebar');
+  const toggleSidebarIcon = (toggleSidebarBtn && toggleSidebarBtn.querySelector('span')) || null;
+  const fullscreenBtn = document.getElementById('toggle-fullscreen');
+  const toast = document.getElementById('toast');
+
+  let currentSlideIndex = 0;
+
+  // Initialize
+  showSlide(currentSlideIndex);
+
+  // 1. Navigation Functions
+  function showSlide(index) {
+    if (index < 0 || index >= slides.length) return;
+
+    // Remove active class from current slide
+    slides.forEach(slide => slide.classList.remove('active'));
+    menuItems.forEach(item => item.classList.remove('active'));
+
+    // Set new active slide
+    currentSlideIndex = index;
+    slides[currentSlideIndex].classList.add('active');
+
+    // Update Counter
+    if (counterSpan) {
+      counterSpan.textContent = `${currentSlideIndex + 1} / ${slides.length}`;
+    }
+
+    // Update Progress Bar
+    if (progressBar) {
+      const progress = ((currentSlideIndex + 1) / slides.length) * 100;
+      progressBar.style.width = `${progress}%`;
+    }
+
+    // Highlight menu item
+    const targetMenuId = `menu-slide-${currentSlideIndex}`;
+    const activeMenuItem = document.getElementById(targetMenuId);
+    if (activeMenuItem) {
+      activeMenuItem.classList.add('active');
+      activeMenuItem.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    }
+
+    // Disable/Enable nav buttons
+    if (prevBtn) {
+      prevBtn.disabled = currentSlideIndex === 0;
+    }
+    // If last slide, change next button text or disable
+    if (nextBtn) {
+      if (currentSlideIndex === slides.length - 1) {
+        nextBtn.innerHTML = '結束 <span>➔</span>';
+      } else {
+        nextBtn.innerHTML = '下一步 <span>➔</span>';
+      }
+    }
+
+    // Dispatch a custom resize event to make sure any widgets inside redraw if needed
+    window.dispatchEvent(new Event('resize'));
+  }
+
+  function nextSlide() {
+    if (currentSlideIndex < slides.length - 1) {
+      showSlide(currentSlideIndex + 1);
+    } else {
+      showToast('簡報播放完畢，謝謝！');
+    }
+  }
+
+  function prevSlide() {
+    if (currentSlideIndex > 0) {
+      showSlide(currentSlideIndex - 1);
+    }
+  }
+
+  // 2. Navigation Event Listeners
+  if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+  if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+
+  // Keyboard navigation
+  document.addEventListener('keydown', (e) => {
+    // If typing in textarea, don't trigger slide change
+    if (document.activeElement.tagName === 'TEXTAREA' || document.activeElement.tagName === 'INPUT') {
+      return;
+    }
+
+    if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === 'Space') {
+      e.preventDefault();
+      nextSlide();
+    } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+      e.preventDefault();
+      prevSlide();
+    }
+  });
+
+  // Sidebar Menu Jump
+  menuItems.forEach(item => {
+    item.addEventListener('click', (e) => {
+      e.preventDefault();
+      const slideIndex = parseInt(item.getAttribute('data-slide-index'), 10);
+      showSlide(slideIndex);
+    });
+  });
+
+  // Toggle Sidebar Collapse
+  if (toggleSidebarBtn && sidebar) {
+    toggleSidebarBtn.addEventListener('click', () => {
+      sidebar.classList.toggle('collapsed');
+      if (toggleSidebarIcon) {
+        if (sidebar.classList.contains('collapsed')) {
+          toggleSidebarIcon.textContent = 'menu_open';
+        } else {
+          toggleSidebarIcon.textContent = 'menu';
+        }
+      }
+    });
+  }
+
+  // Toggle Fullscreen Mode
+  if (fullscreenBtn) {
+    fullscreenBtn.addEventListener('click', () => {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(err => {
+          showToast(`無法啟動全螢幕模式: ${err.message}`);
+        });
+        const fullscreenIcon = fullscreenBtn.querySelector('span');
+        if (fullscreenIcon) fullscreenIcon.textContent = 'fullscreen_exit';
+        if (sidebar) sidebar.classList.add('collapsed');
+        if (toggleSidebarIcon) toggleSidebarIcon.textContent = 'menu_open';
+      } else {
+        document.exitFullscreen();
+        const fullscreenIcon = fullscreenBtn.querySelector('span');
+        if (fullscreenIcon) fullscreenIcon.textContent = 'fullscreen';
+        if (sidebar) sidebar.classList.remove('collapsed');
+        if (toggleSidebarIcon) toggleSidebarIcon.textContent = 'menu';
+      }
+    });
+  }
+
+  // Global Fullscreen Change Listener (handles Esc key and auto-collapse)
+  document.addEventListener('fullscreenchange', () => {
+    const fullscreenIcon = fullscreenBtn ? fullscreenBtn.querySelector('span') : null;
+    if (document.fullscreenElement) {
+      if (sidebar) sidebar.classList.add('collapsed');
+      if (toggleSidebarIcon) toggleSidebarIcon.textContent = 'menu_open';
+      if (fullscreenIcon) fullscreenIcon.textContent = 'fullscreen_exit';
+    } else {
+      if (sidebar) sidebar.classList.remove('collapsed');
+      if (toggleSidebarIcon) toggleSidebarIcon.textContent = 'menu';
+      if (fullscreenIcon) fullscreenIcon.textContent = 'fullscreen';
+    }
+    // Redraw current active slide to fit the space
+    showSlide(currentSlideIndex);
+  });
+
+  // Toast helper
+  function showToast(message) {
+    toast.textContent = message;
+    toast.classList.add('show');
+    setTimeout(() => {
+      toast.classList.remove('show');
+    }, 2500);
+  }
+
+  // 3. Interactive Prompt Builder Logic
+  const builderRole = document.getElementById('prompt-role');
+  const builderGoal = document.getElementById('prompt-goal');
+  const builderAction = document.getElementById('prompt-action');
+  const builderFormat = document.getElementById('prompt-format');
+  const builderOutput = document.getElementById('prompt-output-text');
+  const copyPromptBtn = document.getElementById('copy-prompt-btn');
+
+  function updateGeneratedPrompt() {
+    if (!builderOutput) return;
+
+    const role = builderRole.value;
+    const goal = builderGoal.value;
+    const action = builderAction.value;
+    const format = builderFormat.value;
+
+    let promptText = `你現在扮演一個專業的【${role}】。\n\n`;
+    promptText += `【我的目標】\n我希望透過此對話達成以下目標：\n- ${goal}\n\n`;
+    promptText += `【具體指令】\n請協助我執行以下任務：\n- ${action}\n\n`;
+    promptText += `【格式要求】\n輸出結果請遵循以下規範：\n1. 採用 繁體中文 (Traditional Chinese)。\n2. 格式設定：${format}\n3. 重要：如果涉及本地檔案修改，請在處理前先讀取該目錄下的 CLAUDE.md。`;
+
+    builderOutput.value = promptText;
+  }
+
+  // Bind builder select change events
+  if (builderRole && builderGoal && builderAction && builderFormat) {
+    [builderRole, builderGoal, builderAction, builderFormat].forEach(element => {
+      element.addEventListener('change', updateGeneratedPrompt);
+    });
+    // Init prompt text
+    updateGeneratedPrompt();
+  }
+
+  // Copy Prompt to Clipboard
+  if (copyPromptBtn && builderOutput) {
+    copyPromptBtn.addEventListener('click', () => {
+      navigator.clipboard.writeText(builderOutput.value)
+        .then(() => {
+          showToast('Prompt 已複製到剪貼簿！');
+        })
+        .catch(err => {
+          showToast('複製失敗，請手動複製！');
+        });
+    });
+  }
+
+  // 4. Interactive CLAUDE.md Templates (Slide 8)
+  const claudeMdRoleSelect = document.getElementById('claude-md-role-select');
+  const claudemdCodeBlock = document.getElementById('claudemd-code');
+  const copyClaudemdBtn = document.getElementById('copy-claudemd-btn');
+
+  const claudeMdTemplates = {
+    "資深財務分析師": `# 專案規則：財務支出分析與決策
+- 角色：資深財務分析助理
+- 語言偏好：繁體中文 (Traditional Chinese)
+- 文件輸出規則：
+  1. 暫存與明細報表存入 \`outputs/temp/\`
+  2. 正式核決財務報告命名格式：\`財務分析_v1.docx\`
+- 專業準則：
+  - 遇到缺少欄位時，請使用 AskUserQuestion 詢問，嚴禁自行虛構數字。
+  - 對於大額支出 (>10萬) 需額外進行月增率與佔比分析。`,
+
+    "油品與能源市場研究員": `# 專案規則：油品與能源市場追蹤
+- 角色：能源市場情報分析助理
+- 語言偏好：繁體中文 (Traditional Chinese)
+- 資訊監控規則：
+  1. 每日 Brent, WTI 原油價格與國際能源署 (IEA) 法規變動摘要。
+  2. 新聞摘要存至 \`outputs/news_daily.md\`。
+- 專業準則：
+  - 引述新聞時必須列出具體發布時間與媒體來源。
+  - 遇到法規比對，必須註明對應的條款與修正案號碼。`,
+
+    "行政人資管理顧問": `# 專案規則：人資流程與組織發展
+- 角色：行政與人資流程優化助理
+- 語言偏好：繁體中文 (Traditional Chinese)
+- 行政輸出規則：
+  1. 會議記錄大綱格式：【決議事項】、【待辦清單 (Owner/Due Date)】、【延伸討論】。
+  2. 報告存入 \`outputs/admin/\`。
+- 安全與隱私限制：
+  - 嚴禁外傳任何包含員工姓名、身分證、薪資或考績的明細資料。
+  - 上傳履歷分析時，自動將人名代換為 "候選人A", "候選人B"。`,
+
+    "專業簡報製作人": `# 專案規則：簡報大綱與商業提案架構
+- 角色：商業簡報架構設計師
+- 語言偏好：繁體中文 (Traditional Chinese)
+- 簡報輸出規則：
+  1. 每頁簡報大綱格式：\`[Slide X] [標題] - 3點子標 (Bullet Points)\`
+  2. 簡報草案存入 \`outputs/pptx_outline.md\`。
+- 設計準則：
+  - 遵循 MECE (相互獨立、完全窮盡) 原則。
+  - 大綱風格需簡明有力，每一點不超過 15 個字。`,
+
+    "業務開發經理人": `# 專案規則：業務開發與客戶關係管理
+- 角色：業務拓展與 CRM 管理助理
+- 語言偏好：繁體中文 (Traditional Chinese)
+- 業務輸出規則：
+  1. 開發信 (Outreach Email) 寫作風格：主旨吸睛、內文精簡、強調雙贏、包含 CTA (行動呼籲)。
+  2. 新潛在客戶清單存入 \`outputs/leads_new.xlsx\`。
+- 專業準則：
+  - 撰寫信件前，自動讀取 \`aboutme/brand-voice.md\` 的公司風格指南。
+  - 遇到現有客戶，必須先查詢 CRM 歷史記錄避免重複拜訪。`
+  };
+
+  function updateClaudeMdCode() {
+    if (!claudemdCodeBlock || !claudeMdRoleSelect) return;
+    const selectedRole = claudeMdRoleSelect.value;
+    claudemdCodeBlock.textContent = claudeMdTemplates[selectedRole] || '';
+  }
+
+  if (claudeMdRoleSelect) {
+    claudeMdRoleSelect.addEventListener('change', updateClaudeMdCode);
+    updateClaudeMdCode(); // Initialize
+  }
+
+  if (copyClaudemdBtn && claudemdCodeBlock) {
+    copyClaudemdBtn.addEventListener('click', () => {
+      navigator.clipboard.writeText(claudemdCodeBlock.textContent)
+        .then(() => {
+          showToast('CLAUDE.md 範本已複製！');
+        })
+        .catch(err => {
+          showToast('複製失敗，請手動複製！');
+        });
+    });
+  }
+
+  // 5. Interactive Security Checklist Logic
+  const checklistItems = document.querySelectorAll('.checklist-item');
+  const securityScoreElement = document.getElementById('security-score');
+  const securityIndicator = document.getElementById('security-indicator');
+
+  checklistItems.forEach(item => {
+    item.addEventListener('click', () => {
+      item.classList.toggle('checked');
+      calculateSecurityScore();
+    });
+  });
+
+  function calculateSecurityScore() {
+    if (!securityScoreElement) return;
+
+    const checkedItems = document.querySelectorAll('.checklist-item.checked');
+    const totalItems = checklistItems.length;
+    const score = Math.round((checkedItems.length / totalItems) * 100);
+
+    securityScoreElement.textContent = `${score} / 100`;
+
+    // Dynamic rating update
+    if (score < 40) {
+      securityIndicator.textContent = '危險！高洩漏風險 ⚠️';
+      securityIndicator.style.color = '#ef4444';
+    } else if (score < 80) {
+      securityIndicator.textContent = '中度防護，需加強 💡';
+      securityIndicator.style.color = '#f59e0b';
+    } else {
+      securityIndicator.textContent = '安全！合規等級高 🛡️';
+      securityIndicator.style.color = '#10b981';
+    }
+  }
+  
+  // Initialize checklist score
+  calculateSecurityScore();
+
+  // 6. Dynamic Case Study Tabs Logic (Slide 9)
+  const tabBtns = document.querySelectorAll('.tab-btn');
+  const tabPanes = document.querySelectorAll('.tab-pane');
+
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Avoid interference with other tab widgets by checking parent context
+      const container = btn.closest('.case-study-widget');
+      if (!container) return;
+
+      const btns = container.querySelectorAll('.tab-btn');
+      const panes = container.querySelectorAll('.tab-pane');
+
+      btns.forEach(b => b.classList.remove('active'));
+      panes.forEach(p => p.classList.remove('active'));
+
+      btn.classList.add('active');
+
+      const paneId = btn.getAttribute('data-tab');
+      const targetPane = container.querySelector(`#${paneId}`);
+      if (targetPane) {
+        targetPane.classList.add('active');
+      }
+    });
+  });
+
+  // 7. Slide 12: Interactive Case Studies for Students (Hand-raising)
+  const studentTabBtns = document.querySelectorAll('.student-tab-btn');
+  const studentTabPanes = document.querySelectorAll('.student-tab-pane');
+
+  studentTabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const container = btn.closest('.student-case-widget');
+      if (!container) return;
+
+      const btns = container.querySelectorAll('.student-tab-btn');
+      const panes = container.querySelectorAll('.student-tab-pane');
+
+      btns.forEach(b => b.classList.remove('active'));
+      panes.forEach(p => p.classList.remove('active'));
+
+      btn.classList.add('active');
+
+      const paneId = btn.getAttribute('data-tab');
+      const targetPane = container.querySelector(`#${paneId}`);
+      if (targetPane) {
+        targetPane.classList.add('active');
+      }
+    });
+  });
+
+  // 8. Interactive Quizzes Logic
+  const quizContainers = document.querySelectorAll('.quiz-container');
+
+  quizContainers.forEach(container => {
+    const options = container.querySelectorAll('.quiz-option');
+    const explanation = container.querySelector('.quiz-explanation');
+
+    options.forEach(option => {
+      option.addEventListener('click', () => {
+        // 標記當前投影片或 Tab 頁面為已回答，以顯示說明內容
+        const activeSlide = container.closest('.slide');
+        if (activeSlide) {
+          activeSlide.classList.add('quiz-answered');
+        }
+        const activeTabPane = container.closest('.student-tab-pane');
+        if (activeTabPane) {
+          activeTabPane.classList.add('quiz-answered');
+        }
+
+        // Reset option styling in this specific container
+        options.forEach(opt => {
+          opt.classList.remove('correct', 'incorrect');
+        });
+
+        const isCorrect = option.getAttribute('data-correct') === 'true';
+        if (isCorrect) {
+          option.classList.add('correct');
+          if (explanation) {
+            explanation.classList.add('show');
+            explanation.style.background = '#ecfdf5';
+            explanation.style.borderLeftColor = '#10b981';
+            explanation.style.color = '#065f46';
+            explanation.innerHTML = `<strong>✓ 回答正確！</strong><br>${explanation.getAttribute('data-text-correct')}`;
+          }
+        } else {
+          option.classList.add('incorrect');
+          if (explanation) {
+            explanation.classList.add('show');
+            explanation.style.background = '#fef2f2';
+            explanation.style.borderLeftColor = '#ef4444';
+            explanation.style.color = '#991b1b';
+            explanation.innerHTML = `<strong>❌ 選項錯誤，請再試試！</strong><br>${explanation.getAttribute('data-text-incorrect') || '這不是最佳選項。'}`;
+          }
+        }
+      });
+    });
+  });
+});
+
+</script>
 </body>
 </html>
